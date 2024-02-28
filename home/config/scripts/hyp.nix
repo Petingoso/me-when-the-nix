@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  self,
   ...
 }: {
   home.file.".local/bin/hyp" = {
@@ -13,9 +14,9 @@
       mkdir -p /tmp/themes/hyprland/
       mkdir -p /tmp/themes/nvim/
 
-      cp -r ${../kitty}/* /tmp/themes/kitty/
-      cp -r ${../rofi/colors}/* /tmp/themes/rofi/
-      cp -r ${../hyprland/themes}/* /tmp/themes/hyprland/
+      cp -r ${self}/home/config/kitty/* /tmp/themes/kitty/
+      cp -r ${self}/home/config/rofi/colors/* /tmp/themes/rofi/
+      cp -r ${self}/home/config/hyprland/themes/* /tmp/themes/hyprland/
 
       echo 'vim.cmd("colorscheme gruvbox")' >> /tmp/themes/nvim/theme
 

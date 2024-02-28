@@ -13,6 +13,8 @@
       "${XDG_BIN_HOME}"
     ];
   };
+  home-manager.extraSpecialArgs = {inherit inputs self config';};
+
   home-manager.users.${config'.username} = {
     imports = [./config];
     gtk.iconTheme = {
