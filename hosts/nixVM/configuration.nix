@@ -79,5 +79,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  programs.zsh.enable = true;
   system.stateVersion = "23.11"; # Did you read the comment?
 }
