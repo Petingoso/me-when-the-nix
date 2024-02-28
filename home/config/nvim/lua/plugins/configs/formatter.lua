@@ -35,7 +35,7 @@ local formatterConfig = {
 	nix = {
 		function()
 			return {
-				exe = "nixfmt",
+				exe = "alejandra",
 				args = { "" },
 				stdin = true,
 			}
