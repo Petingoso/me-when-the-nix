@@ -1,6 +1,8 @@
-{config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.file.".local/bin/hyp" = {
     text = ''
        #!/bin/zsh
@@ -22,5 +24,5 @@
       Hyprland
     '';
     executable = true;
-    };
+  };
 }

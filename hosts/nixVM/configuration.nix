@@ -1,18 +1,21 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config,config', pkgs,inputs, self, ... }:
-
 {
-
+  config,
+  config',
+  pkgs,
+  inputs,
+  self,
+  ...
+}: {
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -51,7 +54,6 @@
   # Configure console keymap
   console.keyMap = "pt-latin1";
 
-
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -66,7 +68,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${config'.username} = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
   };
 
   # Allow unfree packages
@@ -76,7 +78,6 @@
   ];
 
   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
+  services.openssh.enable = true;
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }

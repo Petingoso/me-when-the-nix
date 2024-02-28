@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   wayland.windowManager.hyprland.settings.env = [
     "CLUTTER_BACKEND,wayland"
     "XDG_SESSION_TYPE,wayland"
@@ -21,6 +21,5 @@
     "EDITOR,neovim"
     "VISUAL,neovim"
     "LC_ALL,C"
-
   ];
 }

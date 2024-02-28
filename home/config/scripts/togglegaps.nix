@@ -1,6 +1,9 @@
-{ self, config, pkgs, ... }:
-
 {
+  self,
+  config,
+  pkgs,
+  ...
+}: {
   home.file.".local/bin/togglegaps" = {
     text = ''
       #!/bin/sh

@@ -1,6 +1,9 @@
-{ self, config, pkgs, ... }:
-
 {
+  self,
+  config,
+  pkgs,
+  ...
+}: {
   home.file.".local/bin/powermenu" = {
     text = ''
           !/usr/bin/env bash

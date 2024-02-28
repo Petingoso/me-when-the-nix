@@ -1,6 +1,9 @@
-{ self, config, pkgs, ... }:
-
 {
+  self,
+  config,
+  pkgs,
+  ...
+}: {
   home.file.".local/bin/conservation-mode" = {
     text = ''
       #!/usr/bin/env sh

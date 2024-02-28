@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   xdg.configFile."rofi/config.rasi".source = ./rofi/config.rasi;
   xdg.configFile."rofi/launchers/menu.rasi".source = ./rofi/launchers/menu.rasi;
   xdg.configFile."rofi/launchers/power.rasi".source = ./rofi/launchers/power.rasi;

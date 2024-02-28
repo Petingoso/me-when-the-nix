@@ -1,5 +1,8 @@
-{ config, pkgs, ... }: {
-
+{
+  config,
+  pkgs,
+  ...
+}: {
   wayland.windowManager.hyprland.settings = {
     source = "/tmp/themes/hyprland/hypr_theme";
 
@@ -12,7 +15,6 @@
       natural_scroll = false;
 
       touchpad.disable_while_typing = false;
-
     };
 
     gestures = {
@@ -29,11 +31,11 @@
       layout = "dwindle";
     };
 
-    dwindle = { preserve_split = true; };
+    dwindle = {preserve_split = true;};
 
-    master = { new_is_master = false; };
+    master = {new_is_master = false;};
 
-    animations = { enabled = 1; };
+    animations = {enabled = 1;};
 
     decoration = {
       rounding = 3;
@@ -49,7 +51,7 @@
       shadow_render_power = 2;
       shadow_ignore_window = 1;
       shadow_offset = "8 8";
-     "col.shadow" = "0x44000000";
+      "col.shadow" = "0x44000000";
     };
 
     # misc.disable_hyprland_logo = true;

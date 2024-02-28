@@ -1,7 +1,10 @@
-{ config, pkgs, ... }: {
-
+{
+  config,
+  pkgs,
+  ...
+}: {
   wayland.windowManager.hyprland.settings = {
-    exec = [ "pkill waybar;/usr/bin/waybar &" ];
+    exec = ["pkill waybar;/usr/bin/waybar &"];
     exec-once = [
       "GDK_BACKEND=x11 pcloud"
       "swaync"
@@ -11,6 +14,5 @@
       "wl-clip-persist --clipboard regular"
       "/usr/lib/kdeconnectd"
     ];
-
   };
 }

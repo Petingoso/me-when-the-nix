@@ -1,4 +1,9 @@
-{ config, pkgs, self, ... }: {
+{
+  config,
+  pkgs,
+  self,
+  ...
+}: {
   programs.kitty.enable = true;
   programs.kitty.extraConfig = "include /tmp/themes/kitty/kitty_theme";
 
@@ -31,7 +36,7 @@
     url_prefixes = "http https file ftp gemini irc gopher mailto news git";
 
     detect_urls = true;
-    # url_excluded_characters 
+    # url_excluded_characters
 
     select_by_word_characters = "@-./_~?&=%+#";
 
@@ -51,7 +56,5 @@
     allow_remote_control = true;
 
     listen_on = "unix:/tmp/kitty";
-
   };
-
 }
