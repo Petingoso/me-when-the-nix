@@ -79,5 +79,7 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
   system.stateVersion = "23.11"; # Did you read the comment?
 }
