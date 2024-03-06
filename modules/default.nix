@@ -1,3 +1,3 @@
 _: {
-  imports = [];
+  imports = [./hyprland.nix];
 }

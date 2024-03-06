@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Directory
 hypr_dir="/tmp/themes/hyprland"

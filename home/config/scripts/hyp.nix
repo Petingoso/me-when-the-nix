@@ -6,7 +6,7 @@
 }: {
   home.file.".local/bin/hyp" = {
     text = ''
-       #!/bin/zsh
+       #!/bin/sh
       cd ~
 
       mkdir -p /tmp/themes/kitty/

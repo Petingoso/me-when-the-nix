@@ -58,14 +58,14 @@ local tools = {
 	{ "rcarriga/nvim-dap-ui", lazy = true },
 
 	-- Manage external editor tooling i.e LSP servers
-	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("plugins.configs.mason")
-		end,
-	},
-	{ "williamboman/mason-lspconfig.nvim" }, -- Automatically install language servers to stdpath
-	{ "jay-babu/mason-nvim-dap.nvim" }, --mason for dap
+	-- {
+	-- 	"williamboman/mason.nvim",
+	-- 	config = function()
+	-- 		require("plugins.configs.mason")
+	-- 	end,
+	-- },
+	-- { "williamboman/mason-lspconfig.nvim" }, -- Automatically install language servers to stdpath
+	-- { "jay-babu/mason-nvim-dap.nvim" }, --mason for dap
 
 	--markdown previewing
 	{

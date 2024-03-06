@@ -19,6 +19,7 @@ in {
       ../modules
       inputs.home-manager.nixosModules.home-manager
       ../home/home.nix
+      ./common.nix
     ];
   };
 }

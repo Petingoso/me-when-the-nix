@@ -38,18 +38,18 @@
     LC_TIME = "pt_PT.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the Budgie Desktop environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.budgie.enable = true;
+  # # Enable the X11 windowing system.
+  # services.xserver.enable = true;
+  #
+  # # Enable the Budgie Desktop environment.
+  # services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.desktopManager.budgie.enable = true;
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "pt";
-    variant = "";
-  };
+  # services.xserver.xkb = {
+  #   layout = "pt";
+  #   variant = "";
+  # };
 
   # Configure console keymap
   console.keyMap = "pt-latin1";
@@ -65,21 +65,10 @@
     pulse.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${config'.username} = {
-    isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel"];
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages = with pkgs; [
   ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
   system.stateVersion = "23.11"; # Did you read the comment?
 }

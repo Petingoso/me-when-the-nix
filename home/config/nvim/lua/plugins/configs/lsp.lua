@@ -14,5 +14,6 @@ local on_attach = function(_, bufnr)
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 	end
 end
+require("lspconfig").nil_ls.setup({})
 -- nvim-cmp supports additional completion capabilities
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())

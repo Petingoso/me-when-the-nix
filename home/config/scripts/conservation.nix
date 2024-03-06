@@ -6,7 +6,7 @@
 }: {
   home.file.".local/bin/conservation-mode" = {
     text = ''
-      #!/usr/bin/env sh
+      #!/bin/sh
       if [ $1 = 1 ]; then
       	echo "Enabling battery limit"
       	echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode

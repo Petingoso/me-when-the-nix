@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  imports = ["${self}/variables.nix"];
+  imports = ["${self}/home/variables.nix"];
 
   services.hypridle.enable = true;
   services.hypridle.lockCmd = config.lock_cmd;

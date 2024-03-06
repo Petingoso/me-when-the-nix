@@ -22,8 +22,19 @@
       name = "Papirus-Dark";
     };
 
-    home.packages = with pkgs; [alejandra ranger papirus-icon-theme pam zinit nh git clang];
+    home.packages = with pkgs; [alejandra papirus-icon-theme pam nh git clang eza fzf xterm];
 
     home.stateVersion = config.system.stateVersion;
+    wayland.windowManager.sway = {
+      enable = true;
+      config = rec {
+        modifier = "Mod4";
+        # Use kitty as default terminal
+        terminal = "xterm";
+        startup = [
+          {command = "xterm";}
+        ];
+      };
+    };
   };
 }
