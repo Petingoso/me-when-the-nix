@@ -21,8 +21,14 @@
       package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
     };
-
-    home.packages = with pkgs; [papirus-icon-theme eza fzf xterm];
+    home.packages = with pkgs; [
+      (callPackage ../pkgs/everforest.nix {})
+      papirus-icon-theme
+      eza
+      fzf
+      xterm
+      nordic
+    ];
 
     home.stateVersion = config.system.stateVersion;
     wayland.windowManager.sway = {
