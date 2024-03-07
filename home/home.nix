@@ -22,7 +22,7 @@
       name = "Papirus-Dark";
     };
 
-    home.packages = with pkgs; [alejandra papirus-icon-theme pam nh git clang eza fzf xterm];
+    home.packages = with pkgs; [papirus-icon-theme eza fzf xterm];
 
     home.stateVersion = config.system.stateVersion;
     wayland.windowManager.sway = {

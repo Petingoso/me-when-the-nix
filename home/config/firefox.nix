@@ -2,13 +2,9 @@
   config,
   lib,
   pkgs,
-  theme,
   ...
 }: {
-  # programs.firefox.arkenfox.enable = true;
-  # programs.firefox.arkenfox.version = "122.0";
-
-  # xdg.configFile."firefox/treestyle-tab.json".source = ./firefox/config.json;
+  xdg.configFile."firefox/treestyle-tab.json".source = ./firefox/config.json;
   programs.firefox = {
     enable = true;
 
@@ -23,6 +19,7 @@
         OfferToSaveLogins = false;
         OfferToSaveLoginsDefault = false;
         PasswordManagerEnabled = false;
+        WarnOnClose = true;
         FirefoxHome = {
           Search = true;
           Pocket = false;
@@ -34,18 +31,42 @@
           ExtensionRecommendations = false;
           SkipOnboarding = true;
         };
+        ExtensionSettings = with builtins; let
+          extension = shortId: uuid: {
+            name = uuid;
+            value = {
+              install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
+              installation_mode = "normal_installed";
+            };
+          };
+        in
+          listToAttrs [
+            (extension "auto-tab-discard" "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}")
+            (extension "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
+            (extension "buster-captcha-solver" "{e58d3966-3d76-4cd9-8552-1582fbc800c1}")
+            (extension "chameleon-ext" "{3579f63b-d8ee-424f-bbb6-6d0ce3285e6a}")
+            (extension "cookie-editor" "{c3c10168-4186-445c-9c5b-63f12b8e2c87}")
+            (extension "darkreader" "addon@darkreader.org")
+            (extension "noscript" "{73a6fe31-595d-460b-a920-fcc0f8843232}")
+            (extension "prettier-lichess" "{8ad4bea8-ad8d-4e98-b434-a76065dee6cb}")
+            (extension "s3_translator" "s3@translator")
+            (extension "skip-redirect" "skipredirect@sblask")
+            (extension "smart-referer" "smart-referer@meh.paranoid.pk")
+            (extension "startpage-private-search" "{20fc2e06-e3e4-4b2b-812b-ab431220cada}")
+            (extension "tab-session-manager" "Tab-Session-Manager@sienori")
+            (extension "tampermonkey" "firefox@tampermonkey.net")
+            (extension "tree-style-tab" "treestyletab@piro.sakura.ne.jp")
+            (extension "tst-search" "@tst-search")
+            (extension "tst-fade-old-tabs" "tst_fade_old_tabs@emvaized.com")
+            (extension "ublock-origin" "uBlock0@raymondhill.net")
+          ];
+        # To add additional extensions, find it on addons.mozilla.org, find
+        # the short ID in the url (like https://addons.mozilla.org/en-US/firefox/addon/!SHORT_ID!/)
+        # Then, download the XPI by filling it in to the install_url template, unzip it,
+        # run `jq .browser_specific_settings.gecko.id manifest.json`
       };
     };
     profiles.Default = {
-      # arkenfox = {
-      #   enable = true;
-      #   # "0800"."0804"."browser.search.suggest.enabled".value = true;
-      #   "2800"."2811"."privacy.cpd.history".value = false;
-      #   "2800"."2820"."privacy.clearOnShutdown.history".value = false;
-      #   "5000"."5001"."browser.privatebrowsing.autostart".value = false;
-      #   "5000"."5013"."places.history.enabled".value = true;
-      #   "5000"."5021"."keyword.enabled".value = true;
-      # };
       search = {
         force = true;
         default = "DuckDuckGo";
@@ -82,20 +103,6 @@
           "Wikipedia (en)".metaData.alias = "@wiki";
         };
       };
-      extensions = with config.nur.repos.rycee.firefox-addons; [
-        ublock-origin
-        bitwarden
-        tree-style-tab
-        tst-tab-search
-        auto-tab-discard
-        darkreader
-        skip-redirect
-        noscript
-        pywalfox
-        tab-session-manager
-        violentmonkey
-      ];
-
       settings = {
         "General.smoothScroll" = true;
         "media.autoplay.enabled.user-gestures-needed" = false;

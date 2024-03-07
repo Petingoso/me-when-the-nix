@@ -27,8 +27,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur.url = "github:nix-community/NUR";
-
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
 
     nh = {

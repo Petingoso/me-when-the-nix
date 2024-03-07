@@ -1,6 +1,6 @@
 _: {
   imports = [
-    #    ./firefox.nix
+    ./firefox.nix
     #./hyprland.nix
     ./kitty.nix
     ./nvim.nix

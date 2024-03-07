@@ -501,21 +501,6 @@
         "type": "github"
       }
     },
-    "nur": {
-      "locked": {
-        "lastModified": 1709058305,
-        "narHash": "sha256-MDUmf4+aeSDuVGeu2EeOVBopjsGsfdr/a5Z6fwf+ODA=",
-        "owner": "nix-community",
-        "repo": "NUR",
-        "rev": "5434c62e9f06f38a1b60affe7012dc4498bb6c94",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "NUR",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
@@ -525,8 +510,7 @@
         "nh": "nh",
         "nix-gaming": "nix-gaming",
         "nixpkgs": "nixpkgs_4",
-        "nixpkgs-wayland": "nixpkgs-wayland",
-        "nur": "nur"
+        "nixpkgs-wayland": "nixpkgs-wayland"
       }
     },
     "systems": {
