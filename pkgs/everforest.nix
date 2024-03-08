@@ -4,7 +4,7 @@
   fetchFromGitHub,
 }:
 stdenvNoCC.mkDerivation rec {
-  pname = "everforest";
+  pname = "everforest-gtk";
   version = "020799c97981e2c03a674c1c22be57575b4ac3f7";
 
   src = fetchFromGitHub {

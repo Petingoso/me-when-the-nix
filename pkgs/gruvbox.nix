@@ -5,7 +5,7 @@
   gtk-engine-murrine
 }:
 stdenvNoCC.mkDerivation rec {
-  pname = "gruvbox";
+  pname = "gruvbox-material-gtk";
   version = "a1295d8bcd4dfbd0cd6793d7b1583b442438ed89";
 
   src = fetchFromGitHub {

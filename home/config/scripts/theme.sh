@@ -8,7 +8,7 @@ vscodium_settings="$HOME/.config/VSCodium/User/settings.json"
 nvim_settings="/tmp/themes/nvim/theme"
 
 
-prompt="rofi -dmenu -theme ~/nixfiles/config/rofi/launchers/theme.rasi"
+prompt="rofi -dmenu -theme ~/nixfiles/.config/rofi/launchers/theme.rasi"
 
 # Theme
 cancel="窱 Cancel"

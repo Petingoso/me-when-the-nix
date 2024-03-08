@@ -25,6 +25,9 @@
       nordic
       (callPackage ../pkgs/everforest.nix {})
       (callPackage ../pkgs/gruvbox.nix {})
+      (callPackage ../pkgs/oomox-srcery.nix {})
+      (callPackage ../pkgs/tokyonight.nix {})
+      (callPackage ../pkgs/rose-pine.nix {})
       numix-solarized-gtk-theme
       catppuccin-gtk
       papirus-icon-theme
