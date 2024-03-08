@@ -22,13 +22,15 @@
       name = "Papirus-Dark";
     };
     home.packages = with pkgs; [
+      nordic
       (callPackage ../pkgs/everforest.nix {})
       (callPackage ../pkgs/gruvbox.nix {})
+      numix-solarized-gtk-theme
+      catppuccin-gtk
       papirus-icon-theme
       eza
       fzf
       xterm
-      nordic
     ];
 
     home.stateVersion = config.system.stateVersion;
