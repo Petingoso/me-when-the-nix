@@ -2,7 +2,7 @@
   programs.rofi.package = pkgs.rofi-wayland;
   programs.rofi = {
     enable = true;
-    configPath = "";
+    configPath = ""; #workaround so the package doesnt overwrite the custom config.rasi
   };
 
   xdg.configFile = {
