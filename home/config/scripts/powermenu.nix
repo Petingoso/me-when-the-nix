@@ -6,11 +6,10 @@
 }: {
   home.file.".local/bin/powermenu" = {
     text = ''
-          #!/bin/sh
+      #!/usr/bin/env bash
 
       prompt="rofi -dmenu -theme ~/.config/rofi/launchers/power.rasi"
 
-      uptime=$(uptime -p | sed -e 's/up //g')
 
       shutdown=" Shutdown"
       reboot=" Restart"
@@ -21,7 +20,7 @@
 
       option="$cancel\n$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 
-      select="$(echo "$option" | $prompt -p "Uptime - $uptime")"
+      select="$(echo -e "$option" | $prompt -p "Option: ")"
 
       case $select in
       	$shutdown)

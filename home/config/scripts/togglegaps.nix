@@ -6,7 +6,7 @@
 }: {
   home.file.".local/bin/togglegaps" = {
     text = ''
-      #!/bin/sh
+      #!/usr/bin/env bash
 
       gaps=$(hyprctl getoption general:gaps_in | grep int | awk '{print $2}')
 
