@@ -23,6 +23,7 @@
     };
     home.packages = with pkgs; [
       (callPackage ../pkgs/everforest.nix {})
+      (callPackage ../pkgs/gruvbox.nix {})
       papirus-icon-theme
       eza
       fzf
