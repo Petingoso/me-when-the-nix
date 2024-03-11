@@ -80,7 +80,7 @@
         "ALT, h, movefocus, l"
         "ALT, l, movefocus, r"
         "ALT, k, movefocus, u"
-        "ALT, d, movefocus, d"
+        "ALT, j, movefocus, d"
 
         "ALT SHIFT, left, movewindow, l"
         "ALT SHIFT, right, movewindow, r"
@@ -90,7 +90,7 @@
         "ALT SHIFT, h, movewindow, l"
         "ALT SHIFT, l, movewindow, r"
         "ALT SHIFT, k, movewindow, u"
-        "ALT SHIFT, d, movewindow, d"
+        "ALT SHIFT, j, movewindow, d"
       ]
       ++ (
         # workspaces
