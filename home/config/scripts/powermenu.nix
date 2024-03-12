@@ -12,11 +12,11 @@
 
 
       shutdown=" Shutdown"
-      reboot=" Restart"
+      reboot="󰦛 Restart"
       lock=" Lock"
-      logout="﫼 Logout"
+      logout="󰗽 Logout"
       suspend="🖪 Suspend"
-      cancel="窱 Cancel"
+      cancel="󰖭 Cancel"
 
       option="$cancel\n$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 

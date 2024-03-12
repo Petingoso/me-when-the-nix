@@ -21,6 +21,7 @@
       package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
     };
+
     home.packages = with pkgs; [
       nordic
       (callPackage ../pkgs/everforest.nix {})
@@ -28,8 +29,12 @@
       (callPackage ../pkgs/oomox-srcery.nix {})
       (callPackage ../pkgs/tokyonight.nix {})
       (callPackage ../pkgs/rose-pine.nix {})
+      (catppuccin-gtk.override
+        {
+          accents = ["red"];
+          variant = "macchiato";
+        })
       numix-solarized-gtk-theme
-      catppuccin-gtk
       papirus-icon-theme
       eza
       fzf

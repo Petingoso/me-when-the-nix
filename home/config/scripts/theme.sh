@@ -11,7 +11,7 @@ nvim_settings="/tmp/themes/nvim/theme"
 prompt="rofi -dmenu -theme ~/.config/rofi/launchers/theme.rasi"
 
 # Theme
-cancel="窱 Cancel"
+cancel="󰖭 Cancel"
 theme1=" Nord"
 theme2=" Everforest"
 theme3=" Solarized"
@@ -27,7 +27,7 @@ option="$cancel\n$theme1\n$theme2\n$theme3\n$theme4\n$theme5\n$theme6\n$theme7\n
 
 change_theme()
 {
-	cp ${hypr_dir}/$1.conf ${hypr_dir}/hypr_theme 
+	cp ${hypr_dir}/$1.conf ${hypr_dir}/hypr_theme
 	cp ${rofi_dir}/$1.rasi ${rofi_dir}/colors.rasi
 	cp ${kitty_dir}/colorscheme/$1.conf ${kitty_dir}/kitty_theme
 	sed -i 's/\(.*colorscheme\s*\)[^"]*/\1'"$1"'/' $nvim_settings #sed to switch color
