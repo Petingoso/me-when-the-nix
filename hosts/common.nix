@@ -22,7 +22,6 @@
   environment.systemPackages = with pkgs; [
     gnome.adwaita-icon-theme
     gnome.nixos-gsettings-overrides
-    gsettings-desktop-schemas
     alejandra
     git
     polkit_gnome

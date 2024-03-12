@@ -42,16 +42,5 @@
     ];
 
     home.stateVersion = config.system.stateVersion;
-    wayland.windowManager.sway = {
-      enable = true;
-      config = rec {
-        modifier = "Mod4";
-        # Use kitty as default terminal
-        terminal = "xterm";
-        startup = [
-          {command = "xterm";}
-        ];
-      };
-    };
   };
 }
