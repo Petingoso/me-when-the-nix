@@ -14,11 +14,14 @@
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel"];
   };
+  programs.dconf.enable = true;
   security.polkit.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    gnome.adwaita-icon-theme
+    gsettings-desktop-schemas
     alejandra
     git
     polkit_gnome
