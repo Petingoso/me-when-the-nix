@@ -27,10 +27,12 @@
     git
     polkit_gnome
     pam
+    neovim
   ];
 
   environment.sessionVariables = {
     GSETTINGS_SCHEMA_DIR = "${pkgs.gnome.nixos-gsettings-overrides}/share/gsettings-schemas/nixos-gsettings-overrides/glib-2.0/schemas/";
+    EDITOR = "nvim";
   };
 
   fonts.packages = with pkgs; [
