@@ -21,12 +21,17 @@
 
   environment.systemPackages = with pkgs; [
     gnome.adwaita-icon-theme
+    gnome.nixos-gsettings-overrides
     gsettings-desktop-schemas
     alejandra
     git
     polkit_gnome
     pam
   ];
+
+  environment.sessionVariables = {
+    GSETTINGS_SCHEMA_DIR = "${pkgs.gnome.nixos-gsettings-overrides}/share/gsettings-schemas/nixos-gsettings-overrides/glib-2.0/schemas/";
+  };
 
   fonts.packages = with pkgs; [
     noto-fonts
