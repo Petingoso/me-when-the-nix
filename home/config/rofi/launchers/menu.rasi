@@ -11,10 +11,10 @@
 configuration {
 	modi:                       "drun,run,filebrowser,window";
     show-icons:                 true;
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
-    display-window:             "";
+    display-drun:               " ";
+    display-run:                " ";
+    display-filebrowser:        " ";
+    display-window:             " ";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
 }
@@ -225,6 +225,7 @@ element alternate.active {
     text-color:                  var(alternate-active-foreground);
 }
 element-icon {
+    margin:                      10px;
     background-color:            transparent;
     text-color:                  inherit;
     size:                        24px;
