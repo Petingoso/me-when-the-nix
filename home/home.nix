@@ -40,6 +40,8 @@
       fzf
       xterm
       nh
+      dunst
+      libnotify
     ];
 
     home.stateVersion = config.system.stateVersion;

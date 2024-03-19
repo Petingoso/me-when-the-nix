@@ -18,8 +18,13 @@
   };
   services.xserver.videoDrivers = ["nvidia" "amdgpu"];
 ####
+  programs.light = {
+  enable = true;
+  brightnessKeys.enable = true; 
+  };
 
   # Use the systemd-boot EFI boot loader.
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 

@@ -12,12 +12,13 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   users.users.${config'.username} = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "video"];
   };
   programs.dconf.enable = true;
   security.polkit.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  programs.nix-ld.enable = true;
 
   environment.systemPackages = with pkgs; [
     gnome.adwaita-icon-theme

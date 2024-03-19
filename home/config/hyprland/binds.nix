@@ -1,10 +1,12 @@
 {
   self,
   config,
+  pkgs,
   ...
 }: {
   imports = ["${self}/home/variables.nix"];
-
+  home.packages = with pkgs; [hyprshade grim slurp swappy playerctl wl-clipboard];
+  xdg.configFile."hypr/blue-light-filter.glsl".source = ./blue-light.glsl;
   wayland.windowManager.hyprland.settings = {
     bindm = ["ALT,mouse:272,movewindow" "ALT,mouse:273,resizewindow"];
     bind =
@@ -27,7 +29,7 @@
 
         "SUPERSHIFT,Print,exec,grim - | swappy -f -"
 
-        "SUPERSHIFT,S,exec,slurp | grim -g - /tmp/photo && wl-copy < /tmp/photo && notify-send 'Screenshot Copied to Clipboard'"
+        "SUPERSHIFT,S,exec,slurp | grim -g - /tmp/photo && wl-copy --type image/png < /tmp/photo && notify-send 'Screenshot Copied to Clipboard'"
 
         ''
           ALT SHIFT,S,exec,slurp | grim -g - /tmp/photo && swappy -f /tmp/photo
@@ -38,8 +40,7 @@
         "ALT CONTROL, X, exec,~/.local/bin/powermenu"
         "ALT CONTROL, K, exec,~/.local/bin/hypr_bindings"
 
-        "ALT CONTROL, E,exec, hyprshade on blue-light-filter"
-        "ALT CONTROL, R,exec, hyprshade off"
+        "ALT CONTROL, E,exec,hyprshade toggle .config/hypr/blue-light-filter.glsl"
 
         "ALT SHIFT, P, exec, ${config.lock_cmd}"
 
@@ -51,8 +52,8 @@
         "ALT SHIFT,N,changegroupactive,b"
         "ALT, S,layoutmsg,swapwithmaster"
 
-        ",XF86MonBrightnessUp,exec,sudo light -A 10.2"
-        ",XF86MonBrightnessDown,exec,sudo light -T 0.63"
+        # ",XF86MonBrightnessUp,exec,light -A 10.2"
+        # ",XF86MonBrightnessDown,exec,light -T 0.63"
 
         "ALT,P,exec,playerctl play-pause"
         ",XF86AudioRaiseVolume,exec,amixer set Master 5%+"

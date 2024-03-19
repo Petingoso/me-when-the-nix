@@ -5,8 +5,7 @@
     self,
     nixpkgs,
     ...
-  } @ inputs: let
-  in {
+  } @ inputs: {
     nixosConfigurations = import ./hosts {inherit nixpkgs inputs self;};
   };
   inputs = {
@@ -18,7 +17,9 @@
     };
 
     hypridle.url = "github:hyprwm/hypridle";
+    hypridle.inputs.nixpkgs.follows = "nixpkgs";
     hyprlock.url = "github:hyprwm/hyprlock";
+    hyprlock.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-gaming = {
       url = "github:fufexan/nix-gaming";
@@ -27,6 +28,7 @@
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nh = {
