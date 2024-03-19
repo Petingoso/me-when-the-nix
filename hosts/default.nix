@@ -21,7 +21,7 @@ in {
       ../home/home.nix
       ./common.nix
     ];
-    };
+  };
 
   nixWired = lib.nixosSystem {
     system = "x86_64-linux";

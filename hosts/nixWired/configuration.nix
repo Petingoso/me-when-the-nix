@@ -6,21 +6,20 @@
   lib,
   ...
 }: {
-
-#legion 5 shit 
+  #legion 5 shit
   hardware.opengl = {
-  enable = true;
-  driSupport = true;
-  driSupport32Bit = true;
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
   };
   hardware.nvidia.prime = {
-  amdgpuBusId = lib.mkForce "PCI:5:0:0"; ##override nixosHardware option
+    amdgpuBusId = lib.mkForce "PCI:5:0:0"; ##override nixosHardware option
   };
   services.xserver.videoDrivers = ["nvidia" "amdgpu"];
-####
+  ####
   programs.light = {
-  enable = true;
-  brightnessKeys.enable = true; 
+    enable = true;
+    brightnessKeys.enable = true;
   };
 
   # Use the systemd-boot EFI boot loader.

@@ -67,10 +67,10 @@
 
   environment.systemPackages = with pkgs; [
     sway
-    dbus 
+    dbus
   ];
   services.dbus.enable = true;
-  programs.sway.enable=true;
+  programs.sway.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
