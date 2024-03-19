@@ -20,9 +20,13 @@
     hypridle.url = "github:hyprwm/hypridle";
     hyprlock.url = "github:hyprwm/hyprlock";
 
-    nix-gaming = {
+    nixos-gaming = {
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
     };
 
     nh = {

@@ -36,6 +36,7 @@ in {
       ./nixWired
       ../modules
       inputs.home-manager.nixosModules.home-manager
+      inputs.nixos-hardware.nixosModules.lenovo-legion-15arh05h
       ../home/home.nix
       ./common.nix
     ];

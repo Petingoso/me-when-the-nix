@@ -10,6 +10,6 @@
   };
   config = {
     lock_cmd = "playerctl pause; hyprlock";
-    rofi-menu = "rofi -show drun -theme ${self}/config/rofi/launchers/menu.rasi";
+    rofi-menu = "rofi -show drun -theme ~/.config/rofi/launchers/menu.rasi";
   };
 }

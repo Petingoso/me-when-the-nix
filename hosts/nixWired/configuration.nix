@@ -2,13 +2,22 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  config,
-  config',
   pkgs,
-  inputs,
-  self,
+  lib,
   ...
 }: {
+
+#legion 5 shit 
+  hardware.opengl = {
+  enable = true;
+  driSupport = true;
+  driSupport32Bit = true;
+  };
+  hardware.nvidia.prime = {
+  amdgpuBusId = lib.mkForce "PCI:5:0:0"; ##override nixosHardware option
+  };
+  services.xserver.videoDrivers = ["nvidia" "amdgpu"];
+####
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -37,7 +46,6 @@
     LC_TELEPHONE = "pt_PT.UTF-8";
     LC_TIME = "pt_PT.UTF-8";
   };
-
   # # Enable the X11 windowing system.
   # services.xserver.enable = true;
   #

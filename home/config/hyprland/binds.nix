@@ -17,7 +17,7 @@
         "ALT, F, fullscreen,"
 
         "ALT, G, exec, ~/.local/bin/togglegaps"
-        "ALT, Return, exec, /usr/bin/kitty -1"
+        "ALT, Return, exec, kitty -1"
 
         "ALT, B, exec, pkill -SIGUSR1 'waybar'"
 

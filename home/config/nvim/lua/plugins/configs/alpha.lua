@@ -65,10 +65,10 @@ local options = {
 		val = {
 			button("ç f e", "󰨣  Create File  ", ":ene <BAR> startinsert <CR>"),
 			button("ç f f", "  Find File  ", ":Telescope find_files<CR>"),
-			button("ç f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
-			button("ç f w", "  Find Word  ", ":Telescope live_grep<CR>"),
+			button("ç f o", "󰈙  Recent File  ", ":Telescope oldfiles<CR>"),
+			button("ç f w", "󱀽  Find Word  ", ":Telescope live_grep<CR>"),
 			button("ç b m", "  Bookmarks  ", ":Telescope marks<CR>"),
-			button("ç f q", "  Quit Nvim", ":qa<CR>"),
+			button("ç f q", "󰅚  Quit Nvim", ":qa<CR>"),
 		},
 		opts = {
 			spacing = 1,

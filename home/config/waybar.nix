@@ -61,10 +61,10 @@
           tooltip = false;
           format = "{icon}";
           format-icons = {
-            notification = " ";
-            none = " ";
-            dnd-notification = " <span foreground='red'><sup></sup></span>";
-            dnd-none = " ";
+            notification = "󰂞 ";
+            none = "󰂚 ";
+            dnd-notification = "󰂠 <span foreground='red'><sup></sup></span>";
+            dnd-none = "󰂛 ";
           };
 
           return-type = "json";

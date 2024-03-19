@@ -39,6 +39,7 @@
       eza
       fzf
       xterm
+      nh
     ];
 
     home.stateVersion = config.system.stateVersion;

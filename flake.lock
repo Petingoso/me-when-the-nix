@@ -5,11 +5,11 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1706830856,
-        "narHash": "sha256-a0NYyp+h9hlb7ddVz4LUn1vT/PLwqfrWYcHMvFB1xYg=",
+        "lastModified": 1709336216,
+        "narHash": "sha256-Dt/wOWeW6Sqm11Yh+2+t0dfEWxoMxGBvv3JpIocFl9E=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "b253292d9c0a5ead9bc98c4e9a26c6312e27d69f",
+        "rev": "f7b3c975cf067e56e7cda6cb098ebe3fb4d74ca2",
         "type": "github"
       },
       "original": {
@@ -140,7 +140,7 @@
         "type": "github"
       }
     },
-    "nix-gaming": {
+    "nixos-gaming": {
       "inputs": {
         "flake-parts": "flake-parts",
         "nixpkgs": [
@@ -148,16 +148,31 @@
         ]
       },
       "locked": {
-        "lastModified": 1709045095,
-        "narHash": "sha256-6PeSdkt9Ey2k6yrRBpTFgS3RxTjyhRHZlR8hhy38xfQ=",
+        "lastModified": 1710810847,
+        "narHash": "sha256-l1DacjuZny7i7YRbxIsa6DhXWoKJZEnM3Em8gt6Fsfk=",
         "owner": "fufexan",
         "repo": "nix-gaming",
-        "rev": "75625623631c294604b48035db5d95fe8ff08ef3",
+        "rev": "03d036f41beaa8c31b2b2261918d248f5c4d45c8",
         "type": "github"
       },
       "original": {
         "owner": "fufexan",
         "repo": "nix-gaming",
+        "type": "github"
+      }
+    },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1710783728,
+        "narHash": "sha256-eIsfu3c9JUBgm3cURSKTXLEI9Dlk1azo+MWKZVqrmkc=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "1e679b9a9970780cd5d4dfe755a74a8f96d33388",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
         "type": "github"
       }
     },
@@ -180,11 +195,11 @@
     "nixpkgs-lib": {
       "locked": {
         "dir": "lib",
-        "lastModified": 1706550542,
-        "narHash": "sha256-UcsnCG6wx++23yeER4Hg18CXWbgNpqNXcHIo5/1Y+hc=",
+        "lastModified": 1709237383,
+        "narHash": "sha256-cy6ArO4k5qTx+l5o+0mL9f5fa86tYUX3ozE1S+Txlds=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "97b17f32362e475016f942bbdfda4a4a72a8a652",
+        "rev": "1536926ef5621b09bba54035ae2bb6d806d72ac8",
         "type": "github"
       },
       "original": {
@@ -233,7 +248,8 @@
         "hypridle": "hypridle",
         "hyprlock": "hyprlock",
         "nh": "nh",
-        "nix-gaming": "nix-gaming",
+        "nixos-gaming": "nixos-gaming",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3"
       }
     },
