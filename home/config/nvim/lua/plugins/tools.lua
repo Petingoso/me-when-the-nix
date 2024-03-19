@@ -47,15 +47,15 @@ local tools = {
 	},
 
 	--debugging protocol
-	{
-		"mfussenegger/nvim-dap",
-		event = "VeryLazy",
-		config = function()
-			require("plugins.configs.dap")
-		end,
-	},
-
-	{ "rcarriga/nvim-dap-ui", lazy = true },
+	-- {
+	-- 	"mfussenegger/nvim-dap",
+	-- 	event = "VeryLazy",
+	-- 	config = function()
+	-- 		require("plugins.configs.dap")
+	-- 	end,
+	-- },
+	--
+	-- { "rcarriga/nvim-dap-ui", lazy = true },
 
 	-- Manage external editor tooling i.e LSP servers
 	-- {
