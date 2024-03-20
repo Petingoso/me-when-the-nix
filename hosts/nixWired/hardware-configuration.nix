@@ -47,6 +47,12 @@
     options = ["subvol=@log" "noatime" "compress=zstd:6" "ssd" "discard=async" "space_cache=v2" "autodefrag"];
   };
 
+  fileSystems."/hdd" = {
+    device = "/dev/disk/by-uuid/807a62c6-58b5-4b0f-97a4-319d4997c8e7";
+    fsType = "ext4";
+    options = ["defaults" "noatime"];
+  };
+
   boot.tmp.useTmpfs = true;
 
   swapDevices = [

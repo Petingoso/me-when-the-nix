@@ -17,6 +17,12 @@
 
   home-manager.users.${config'.username} = {
     imports = [./config];
+    qt = {
+      enable = true;
+      platformTheme = "qtct";
+      style.name="kvantum";
+    };
+    gtk.cursorTheme.package = pkgs.bibata-cursors;
     gtk.iconTheme = {
       package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
@@ -36,12 +42,17 @@
         })
       numix-solarized-gtk-theme
       papirus-icon-theme
+      libsForQt5.qtstyleplugin-kvantum
       eza
       fzf
       xterm
       nh
       dunst
       libnotify
+      btop
+      ripgrep
+      wtype
+      wdisplays
     ];
 
     home.stateVersion = config.system.stateVersion;

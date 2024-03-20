@@ -18,7 +18,6 @@
   security.polkit.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  programs.nix-ld.enable = true;
 
   environment.systemPackages = with pkgs; [
     gnome.adwaita-icon-theme
@@ -28,7 +27,28 @@
     polkit_gnome
     pam
     neovim
+    bat 
+    lynx
   ];
+  # Set your time zone.
+  time.timeZone = "Europe/Lisbon";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_GB.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "pt_PT.UTF-8";
+    LC_IDENTIFICATION = "pt_PT.UTF-8";
+    LC_MEASUREMENT = "pt_PT.UTF-8";
+    LC_MONETARY = "pt_PT.UTF-8";
+    LC_NAME = "pt_PT.UTF-8";
+    LC_NUMERIC = "pt_PT.UTF-8";
+    LC_PAPER = "pt_PT.UTF-8";
+    LC_TELEPHONE = "pt_PT.UTF-8";
+    LC_TIME = "pt_PT.UTF-8";
+  };
+  # Configure console keymap
+  console.keyMap = "pt-latin1";
 
   environment.sessionVariables = {
     GSETTINGS_SCHEMA_DIR = "${pkgs.gnome.nixos-gsettings-overrides}/share/gsettings-schemas/nixos-gsettings-overrides/glib-2.0/schemas/";

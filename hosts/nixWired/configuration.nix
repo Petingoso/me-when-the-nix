@@ -4,6 +4,7 @@
 {
   pkgs,
   lib,
+  config',
   ...
 }: {
   #legion 5 shit
@@ -17,54 +18,62 @@
   };
   services.xserver.videoDrivers = ["nvidia" "amdgpu"];
   ####
+  programs.hyprland.enable = true;
   programs.light = {
     enable = true;
     brightnessKeys.enable = true;
   };
-
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
   # Use the systemd-boot EFI boot loader.
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.editor = false;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixWired"; # Define your hostname.
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Lisbon";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "pt_PT.UTF-8";
-    LC_IDENTIFICATION = "pt_PT.UTF-8";
-    LC_MEASUREMENT = "pt_PT.UTF-8";
-    LC_MONETARY = "pt_PT.UTF-8";
-    LC_NAME = "pt_PT.UTF-8";
-    LC_NUMERIC = "pt_PT.UTF-8";
-    LC_PAPER = "pt_PT.UTF-8";
-    LC_TELEPHONE = "pt_PT.UTF-8";
-    LC_TIME = "pt_PT.UTF-8";
+  services.opensnitch = {
+    enable = true;
+    rules = {
+      systemd-timesyncd = {
+        name = "systemd-timesyncd";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type = "simple";
+          sensitive = false;
+          operand = "process.path";
+          data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-timesyncd";
+        };
+      };
+      systemd-resolved = {
+        name = "systemd-resolved";
+        enabled = true;
+        action = "allow";
+        duration = "always";
+        operator = {
+          type = "simple";
+          sensitive = false;
+          operand = "process.path";
+          data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-resolved";
+        };
+      };
+    };
   };
-  # # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-  #
-  # # Enable the Budgie Desktop environment.
-  # services.xserver.displayManager.lightdm.enable = true;
-  # services.xserver.desktopManager.budgie.enable = true;
 
-  # Configure keymap in X11
-  # services.xserver.xkb = {
-  #   layout = "pt";
-  #   variant = "";
-  # };
-
-  # Configure console keymap
-  console.keyMap = "pt-latin1";
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-rime
+      fcitx5-configtool
+      fcitx5-gtk
+    ];
+  };
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -76,8 +85,60 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = false; # powers up the default Bluetooth controller on boot
+  services.blueman.enable = true;
+  programs.kdeconnect.enable = true;
 
   environment.systemPackages = with pkgs; [
+    baobab
+    btrbk
+    compsize
+    font-manager
+    gnome.gnome-disk-utility
+    libreoffice
+    lxappearance
+    mpv
+    mpvScripts.mpris
+    ncpamixer
+    cinnamon.nemo
+    cinnamon.nemo-fileroller
+    opensnitch-ui
+    linuxKernel.packages.linux_zen.opensnitch-ebpf
+    opentabletdriver
+    piper
+    psensor
+    qbittorrent
+    mcomix
+  ];
+  users.users.${config'.username}.packages = with pkgs; [
+    bitwarden
+    calibre
+    ckan
+    dualsensectl
+    evince
+    heroic
+    hydrus
+    input-remapper
+    krita
+    lutris
+    neofetch
+    pavucontrol
+    pcsx2
+    osu-lazer-bin
+    prismlauncher
+    qalculate-gtk
+    steam
+    steamtinkerlaunch
+    stremio
+    texliveMedium
+    tor-browser
+    ungoogled-chromium
+    vesktop
+    vscodium
+    wineWowPackages.waylandFull
+    youtube-music
+    miru
   ];
 
   system.stateVersion = "23.11"; # Did you read the comment?

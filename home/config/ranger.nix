@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  home.packages = [pkgs.ranger];
+  home.packages = [pkgs.ranger pkgs.xdragon];
   xdg.configFile = {
     "ranger/commands.py".source = ./ranger/commands.py;
     "ranger/rc.conf".source = ./ranger/rc.conf;

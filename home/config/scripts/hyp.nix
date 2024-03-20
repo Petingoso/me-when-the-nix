@@ -22,7 +22,7 @@
 
       chmod 775 -R /tmp/themes/
 
-      Hyprland
+      dbus-run-session Hyprland
     '';
     executable = true;
   };

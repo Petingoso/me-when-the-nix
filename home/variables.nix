@@ -1,6 +1,7 @@
 {
-  self,
   lib,
+  pkgs,
+  config,
   ...
 }: {
   options = with lib;
@@ -9,7 +10,7 @@
     rofi-menu = mkOption {type = str;};
   };
   config = {
-    lock_cmd = "playerctl pause; hyprlock";
+    lock_cmd = "${pkgs.playerctl}/bin/playerctl pause; ${config.programs.hyprlock.package}/bin/hyprlock";
     rofi-menu = "rofi -show drun -theme ~/.config/rofi/launchers/menu.rasi";
   };
 }

@@ -8,7 +8,6 @@
     "WLR_BACKEND,vulkan"
     "GDK_BACKEND,wayland"
 
-    "GTK_IM_MODULE,fcitx"
     "QT_IM_MODULE,fcitx"
     "GLFW_IM_MODULE,ibus"
     "SDL_IM_MODULE,fcitx"
