@@ -27,66 +27,7 @@
   services.udisks2.enable = true;
   # Use the systemd-boot EFI boot loader.
   boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.editor = false;
-  boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixWired"; # Define your hostname.
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-  services.opensnitch = {
-    enable = true;
-    rules = {
-      systemd-timesyncd = {
-        name = "systemd-timesyncd";
-        enabled = true;
-        action = "allow";
-        duration = "always";
-        operator = {
-          type = "simple";
-          sensitive = false;
-          operand = "process.path";
-          data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-timesyncd";
-        };
-      };
-      systemd-resolved = {
-        name = "systemd-resolved";
-        enabled = true;
-        action = "allow";
-        duration = "always";
-        operator = {
-          type = "simple";
-          sensitive = false;
-          operand = "process.path";
-          data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-resolved";
-        };
-      };
-    };
-  };
-
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-mozc
-      fcitx5-rime
-      fcitx5-configtool
-    ];
-  };
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = false; # powers up the default Bluetooth controller on boot
-  services.blueman.enable = true;
   programs.kdeconnect.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -140,5 +81,5 @@
     miru
   ];
 
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "23.11"; 
 }

@@ -7,26 +7,25 @@
   inputs,
   ...
 }: {
+  programs.dconf.enable = true;
+
   environment.sessionVariables = rec {
+    environment.sessionVariables = {
+      GSETTINGS_SCHEMA_DIR = "${pkgs.gnome.nixos-gsettings-overrides}/share/gsettings-schemas/nixos-gsettings-overrides/glib-2.0/schemas/";
+    };
+
     XDG_BIN_HOME = "$HOME/.local/bin";
     PATH = [
       "${XDG_BIN_HOME}"
     ];
   };
+
+  #####################
+
   home-manager.extraSpecialArgs = {inherit inputs self config';};
 
   home-manager.users.${config'.username} = {
     imports = [./config];
-    qt = {
-      enable = true;
-      platformTheme = "qtct";
-      style.name="kvantum";
-    };
-    gtk.cursorTheme.package = pkgs.bibata-cursors;
-    gtk.iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus-Dark";
-    };
 
     home.packages = with pkgs; [
       nordic

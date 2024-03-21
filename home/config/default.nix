@@ -8,6 +8,7 @@ _: {
     ./rofi.nix
     ./swaync.nix
     ./waybar.nix
+    ./theming.nix
     ./zsh.nix
 
     ./scripts/default.nix

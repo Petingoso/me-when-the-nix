@@ -16,10 +16,14 @@ in {
     };
     modules = [
       ./nixVM
-      ../modules
-      inputs.home-manager.nixosModules.home-manager
-      ../home/home.nix
       ./common.nix
+      ../modules/fonts.nix
+      ../modules/home-manager.nix
+      ../modules/hyprland.nix
+      ../modules/locale.nix
+      ../modules/network.nix
+      ../modules/nix-settings.nix
+      ../modules/sound.nix
     ];
   };
 
@@ -34,11 +38,22 @@ in {
     };
     modules = [
       ./nixWired
-      ../modules
-      inputs.home-manager.nixosModules.home-manager
-      inputs.nixos-hardware.nixosModules.lenovo-legion-15arh05h
-      ../home/home.nix
       ./common.nix
+      ../modules/bluetooth.nix
+      ../modules/fcitx.nix
+      ../modules/fonts.nix
+      ../modules/home-manager.nix
+      ../modules/hyprland.nix
+      ../modules/locale.nix
+      ../modules/network.nix
+      ../modules/nix-settings.nix
+      ../modules/oomd.nix
+      ../modules/opentabletdriver.nix
+      ../modules/opensnitch.nix
+      ../modules/polkit.nix
+      ../modules/sound.nix
+      ../modules/systemd-boot.nix
+      inputs.nixos-hardware.nixosModules.lenovo-legion-15arh05h
     ];
   };
 }
