@@ -19,7 +19,6 @@ in {
       ./common.nix
       ../modules/fonts.nix
       ../modules/home-manager.nix
-      ../modules/hyprland.nix
       ../modules/locale.nix
       ../modules/network.nix
       ../modules/nix-settings.nix
@@ -43,7 +42,6 @@ in {
       ../modules/fcitx.nix
       ../modules/fonts.nix
       ../modules/home-manager.nix
-      ../modules/hyprland.nix
       ../modules/locale.nix
       ../modules/network.nix
       ../modules/nix-settings.nix

@@ -3,7 +3,7 @@
   config',
   ...
 }: {
-  users.users.${config'.username}.packages = with pkgs; [
+  home.packages = with pkgs; [
     gnome.adwaita-icon-theme
     gnome.nixos-gsettings-overrides
   ];

@@ -1,4 +1,4 @@
-{config, ...}: {
+{config', ...}: {
   nix.settings = {
     experimental-features = [
       "flakes"
@@ -6,7 +6,7 @@
     ];
     trusted-users = [
       "root"
-      config.myOptions.other.system.username
+      config'.username
     ];
     auto-optimise-store = true;
     # keep-outputs = true;

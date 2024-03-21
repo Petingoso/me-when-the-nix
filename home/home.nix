@@ -10,9 +10,7 @@
   programs.dconf.enable = true;
 
   environment.sessionVariables = rec {
-    environment.sessionVariables = {
-      GSETTINGS_SCHEMA_DIR = "${pkgs.gnome.nixos-gsettings-overrides}/share/gsettings-schemas/nixos-gsettings-overrides/glib-2.0/schemas/";
-    };
+    GSETTINGS_SCHEMA_DIR = "${pkgs.gnome.nixos-gsettings-overrides}/share/gsettings-schemas/nixos-gsettings-overrides/glib-2.0/schemas/";
 
     XDG_BIN_HOME = "$HOME/.local/bin";
     PATH = [
