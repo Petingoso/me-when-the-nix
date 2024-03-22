@@ -9,7 +9,7 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   users.users.${config'.username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video"];
+    extraGroups = ["wheel" "video"];
   };
   networking.hostName = "${config'.hostname}";
 
@@ -27,6 +27,7 @@
 
   environment.sessionVariables = {
     EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 
   programs.zsh.enable = true;

@@ -58,7 +58,7 @@
         "ALT,P,exec,playerctl play-pause"
         ",XF86AudioRaiseVolume,exec,amixer set Master 5%+"
         ",XF86AudioLowerVolume,exec,amixer set Master 5%-"
-        ",XF86AudioMute,exec,amixer -D pulse set Master 1+ toggle"
+        ",XF86AudioMute,exec,amixer  set Master 1+ toggle"
         ",XF86Calculator,exec,qalculate-gtk"
 
         "ALT, tab, workspace, +1"

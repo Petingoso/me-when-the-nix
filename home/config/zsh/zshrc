@@ -27,12 +27,9 @@ zinit light-mode for					\
 	aloxaf/fzf-tab				    	\
 	zdharma-continuum/fast-syntax-highlighting	\
 	hlissner/zsh-autopair				\
-	arzzen/calc.plugin.zsh				\
 	willghatch/zsh-saneopt				\
 	zsh-users/zsh-autosuggestions			\
 	zsh-users/zsh-completions			\
-	raisty/alt-and-select				\
-	xylous/gitstatus				\
 	joshskidmore/zsh-fzf-history-search		\
 	romkatv/powerlevel10k				\
 	nix-community/nix-zsh-completions
@@ -43,8 +40,6 @@ zinit light-mode for					\
 
 #--------COMPLETIONS--------
 # enable completion features
-autoload -Uz compinit
-compinit -i
 
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
@@ -119,10 +114,6 @@ alias ssh="kitty +kitten ssh"
 #-------VARIABLES-------
 eval "$(dircolors)"
 export notes="/home/petarch/Documents/Notes"
-export HDDMAIN="/media/petarch/HDDMAIN/"
-export EDITOR='nvim'
-export VISUAL='nvim'
-export PATH="$PATH:$HOME/.local/bin:/usr/local/bin/"
 ###########################
 
 #-------FUNCTIONS-------
