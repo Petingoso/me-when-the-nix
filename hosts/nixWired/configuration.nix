@@ -5,18 +5,30 @@
   pkgs,
   lib,
   config',
+  config,
   ...
 }: {
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   #legion 5 shit
   hardware.opengl = {
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
   };
-  hardware.nvidia.prime = {
-    amdgpuBusId = lib.mkForce "PCI:5:0:0"; ##override nixosHardware option
+
+  hardware.nvidia = {
+    prime.amdgpuBusId = lib.mkForce "PCI:5:0:0"; ##override nixosHardware option
   };
+
   services.xserver.videoDrivers = ["nvidia" "amdgpu"];
+  specialisation = {
+    disable-dGPU = {
+      configuration = {
+        system.nixos.tags = ["no-dGPU"];
+        hardware.nvidiaOptimus.disable = true;
+      };
+    };
+  };
   ####
   programs.hyprland.enable = true;
   programs.light = {
@@ -26,7 +38,6 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   # Use the systemd-boot EFI boot loader.
-  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   programs.kdeconnect.enable = true;
 
@@ -44,10 +55,9 @@
     cinnamon.nemo
     cinnamon.nemo-fileroller
     opensnitch-ui
-    linuxKernel.packages.linux_zen.opensnitch-ebpf
+    config.boot.kernelPackages.opensnitch-ebpf
     opentabletdriver
     piper
-    psensor
     qbittorrent
     mcomix
   ];
@@ -59,10 +69,8 @@
     evince
     heroic
     hydrus
-    input-remapper
     krita
     lutris
-    neofetch
     pavucontrol
     pcsx2
     osu-lazer-bin
@@ -81,5 +89,5 @@
     miru
   ];
 
-  system.stateVersion = "23.11"; 
+  system.stateVersion = "23.11";
 }
