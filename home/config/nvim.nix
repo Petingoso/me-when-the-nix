@@ -7,7 +7,7 @@
 
   programs.neovim = {
     enable = true;
-    extraPackages = [pkgs.gcc];
+    extraPackages = [pkgs.gcc pkgs.gdb];
   };
 
   home.file."./.config/nvim" = {
