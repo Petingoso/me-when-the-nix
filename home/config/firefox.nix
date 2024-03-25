@@ -31,7 +31,8 @@
           ExtensionRecommendations = false;
           SkipOnboarding = true;
         };
-        ExtensionSettings = with builtins; let
+        ExtensionSettings = let
+          inherit (builtins) listToAttrs;
           extension = shortId: uuid: {
             name = uuid;
             value = {

@@ -3,9 +3,11 @@
   pkgs,
   config,
   ...
-}: {
-  options = with lib;
-  with types; {
+}: let
+  inherit (lib) mkOption;
+  inherit (lib.types) str;
+in {
+  options = {
     lock_cmd = mkOption {type = str;};
     rofi-menu = mkOption {type = str;};
   };

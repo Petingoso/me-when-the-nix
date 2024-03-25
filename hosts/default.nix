@@ -5,6 +5,26 @@
 }: let
   inherit (inputs.nixpkgs) lib;
 in {
+  nixLive = lib.nixosSystem {
+    system = "x86_64-linux";
+    specialArgs = {
+      inherit inputs self;
+      config' = {
+        hostname = "nixLive";
+        username = "nixos";
+      };
+    };
+    modules = [
+      (inputs.nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
+      ./nixLive
+      ./common.nix
+      ../modules/fonts.nix
+      ../modules/home-manager.nix
+      ../modules/locale.nix
+      ../modules/nix-settings.nix
+      ../modules/sound.nix
+    ];
+  };
   nixVM = lib.nixosSystem {
     system = "x86_64-linux";
     specialArgs = {
