@@ -6,9 +6,10 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-
-    ./themes
     ./kitty
+    ./nvim
+    ./ranger
+    ./themes
     ./zsh
   ];
   options.mystuff = {
@@ -21,6 +22,9 @@
         "${XDG_BIN_HOME}"
       ];
     };
-    home.stateVersion = config.system.stateVersion;
+
+    home-manager.users.${config.mystuff.username} = {
+      home.stateVersion = config.system.stateVersion;
+    };
   };
 }

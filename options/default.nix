@@ -3,8 +3,7 @@
   config,
   ...
 }: {
-  # imports = [./system ./home];
-  imports = [./system];
+  imports = [./system ./home];
 
   options.mystuff = {
     hostname = lib.mkOption {

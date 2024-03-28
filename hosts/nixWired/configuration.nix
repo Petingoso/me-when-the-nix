@@ -7,7 +7,18 @@
     ../../modules/common.nix
     ../../options/default.nix
   ];
+  system.stateVersion = "24.05";
+
   mystuff.hostname = "nixWired";
   mystuff.username = "petnix";
-  system.stateVersion = "24.05";
+  mystuff = {
+    networkmanager.enable = true;
+    nixsettings.enable = true;
+    home-manager.enable = true;
+    kitty.enable = true;
+    nvim-config.enable = true;
+    ranger.enable = true;
+    gtk.enable = true;
+    qt.enable = true;
+  };
 }
