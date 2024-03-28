@@ -11,7 +11,7 @@ add:
 - [x] gtk and qt themes
 - [x] nvim
 - [x] ranger
-- [ ] firefox
+- [x] firefox
 - [ ] hyprland
 - [ ] rofi
 - [ ] scripts
