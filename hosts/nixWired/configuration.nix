@@ -17,6 +17,7 @@
   };
 
   hardware.nvidia = {
+    open = false;
     prime.amdgpuBusId = lib.mkForce "PCI:5:0:0"; ##override nixosHardware option
   };
 
@@ -59,7 +60,7 @@
     opentabletdriver
     piper
     qbittorrent
-    mcomix
+    # mcomix
   ];
   users.users.${config'.username}.packages = with pkgs; [
     bitwarden
@@ -68,7 +69,7 @@
     dualsensectl
     evince
     heroic
-    hydrus
+    # hydrus
     krita
     lutris
     pavucontrol

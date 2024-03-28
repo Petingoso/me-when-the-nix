@@ -53,7 +53,6 @@
             (extension "s3_translator" "s3@translator")
             (extension "skip-redirect" "skipredirect@sblask")
             (extension "smart-referer" "smart-referer@meh.paranoid.pk")
-            (extension "startpage-private-search" "{20fc2e06-e3e4-4b2b-812b-ab431220cada}")
             (extension "tab-session-manager" "Tab-Session-Manager@sienori")
             (extension "tampermonkey" "firefox@tampermonkey.net")
             (extension "tree-style-tab" "treestyletab@piro.sakura.ne.jp")
@@ -70,8 +69,15 @@
     profiles.Default = {
       search = {
         force = true;
-        default = "DuckDuckGo";
+        default = "Startpage";
         engines = {
+          "Startpage" = {
+            urls = [
+              {
+                template = "https://www.startpage.com/sp/search?query={searchTerms}&cat=web";
+              }
+            ];
+          };
           "Nix Packages" = {
             urls = [
               {
