@@ -12,6 +12,8 @@ in {
     };
     modules = [
       ./nixWired
+      "${self}/modules/common.nix"
+      "${self}/options/default.nix"
     ];
   };
 }

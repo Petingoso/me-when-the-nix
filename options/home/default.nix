@@ -6,6 +6,7 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    ./firefox
     ./kitty
     ./nvim
     ./ranger
