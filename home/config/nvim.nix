@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [nil stylua beautysh clang-tools];
+  home.packages = with pkgs; [nil stylua beautysh clang-tools prettierd];
 
   programs.neovim = {
     enable = true;

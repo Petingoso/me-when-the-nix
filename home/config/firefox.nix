@@ -69,14 +69,16 @@
     profiles.Default = {
       search = {
         force = true;
-        default = "Startpage";
+        default = "SearX";
         engines = {
-          "Startpage" = {
+          "SearX" = {
             urls = [
               {
-                template = "https://www.startpage.com/sp/search?query={searchTerms}&cat=web";
+                template = "https://searx.be/search?q={searchTerms}";
               }
             ];
+            iconUpdateURL = "https://searx.be/static/themes/oscar/img/favicon.png";
+            updateInterval = 24 * 60 * 60 * 1000;
           };
           "Nix Packages" = {
             urls = [
