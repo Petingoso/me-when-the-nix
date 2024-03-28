@@ -10,7 +10,10 @@
     ./kitty
     ./nvim
     ./ranger
+    ./rofi
+    ./swaync
     ./themes
+    ./waybar
     ./zsh
   ];
   options.mystuff = {

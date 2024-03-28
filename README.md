@@ -12,14 +12,15 @@ add:
 - [x] nvim
 - [x] ranger
 - [x] firefox
-- [ ] hyprland
-- [ ] rofi
-- [ ] scripts
-- [ ] swaync
+- [x] hyprland
+- [x] rofi
+- [x] scripts
+- [x] swaync
 - [ ] waybar
 
 figure out:
 
 - [ ] modularize theme switching
+- [ ] hyprland as option instead of module
 - [ ] multi user config
 - [ ] better hosts/ format

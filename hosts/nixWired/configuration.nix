@@ -4,6 +4,8 @@
 {...}: {
   imports = [
     ../../modules/system/systemd-boot.nix
+    ../../modules/extra/hyprland
+    ../../modules/extra/scripts
   ];
   system.stateVersion = "24.05";
 
@@ -13,11 +15,14 @@
     # networkmanager.enable = true;
     # nixsettings.enable = true;
     home-manager.enable = true;
+    # rofi.enable = true;
+    swaync.enable = true;
+    waybar.enable = true;
     # kitty.enable = true;
     # nvim-config.enable = true;
     # ranger.enable = true;
     # gtk.enable = true;
     # qt.enable = true;
-    firefox-config.enable = true;
+    # firefox-config.enable = true;
   };
 }

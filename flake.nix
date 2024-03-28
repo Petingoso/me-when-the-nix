@@ -5,31 +5,35 @@
     self,
     nixpkgs,
     ...
-  } @ inputs: let
-  in {
+  } @ inputs: {
     nixosConfigurations = import ./hosts {inherit nixpkgs inputs self;};
   };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-gaming = {
+
+    hypridle.url = "github:hyprwm/hypridle";
+    hypridle.inputs.nixpkgs.follows = "nixpkgs";
+    hyprlock.url = "github:hyprwm/hyprlock";
+    hyprlock.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-gaming = {
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur.url = "github:nix-community/NUR";
-
-    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+    };
 
     nh = {
       url = "github:viperML/nh";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    miru.url = "github:karitham/knixpkgs";
   };
 }
