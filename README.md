@@ -16,7 +16,7 @@ add:
 - [x] rofi
 - [x] scripts
 - [x] swaync
-- [ ] waybar
+- [x] waybar
 
 figure out:
 
