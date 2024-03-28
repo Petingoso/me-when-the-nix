@@ -9,4 +9,5 @@
   ];
   mystuff.hostname = "nixWired";
   mystuff.username = "petnix";
+  system.stateVersion = "24.05";
 }

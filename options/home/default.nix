@@ -7,7 +7,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
 
-    ./themes.nix
+    ./themes
     ./kitty
     ./zsh
   ];
