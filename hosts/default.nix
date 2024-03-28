@@ -12,6 +12,7 @@ in {
     };
     modules = [
       ./nixWired
+      inputs.nixos-hardware.nixosModules.lenovo-legion-15arh05h
       "${self}/modules/common.nix"
       "${self}/options/default.nix"
     ];
