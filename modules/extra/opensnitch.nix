@@ -3,6 +3,10 @@
   lib,
   ...
 }: {
+  environment.systemPackages = with pkgs; [
+    opensnitch-ui
+    config.boot.kernelPackages.opensnitch-ebpf
+  ];
   services.opensnitch = {
     enable = true;
     rules = {

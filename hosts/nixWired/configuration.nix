@@ -90,9 +90,6 @@
     ncpamixer
     cinnamon.nemo
     cinnamon.nemo-fileroller
-    opensnitch-ui
-    config.boot.kernelPackages.opensnitch-ebpf
-    opentabletdriver
     piper
     qbittorrent
     # mcomix
