@@ -11,8 +11,10 @@
 
   config = lib.mkMerge [
     (lib.mkIf config.mystuff.zsh.enable {
+      programs.zsh.enable = true;
+      users.users.${config.mystuff.username}.shell = pkgs.zsh;
       home-manager.users.${config.mystuff.username} = {
-        home.packages = [pkgs.eza];
+        home.packages = [pkgs.eza pkgs.fzf];
         programs.zsh.enable = true;
         home.file.".zshrc".text =
           lib.mkDefault "${builtins.readFile ./zshrc}";

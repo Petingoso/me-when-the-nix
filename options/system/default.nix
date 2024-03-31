@@ -1,6 +1,6 @@
-_:{
-    imports = [
+_: {
+  imports = [
     ./networkmanager.nix
     ./nix-settings.nix
-    ];
-  }
+  ];
+}
