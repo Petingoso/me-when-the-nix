@@ -23,7 +23,7 @@
   ];
   system.stateVersion = "23.11";
 
-  mystuff.hostname = "nixWired";
+  mystuff.hostname = "Wired";
   mystuff.username = "petnix";
   mystuff = {
     networkmanager.enable = true;
@@ -91,6 +91,7 @@
     cinnamon.nemo-fileroller
     piper
     qbittorrent
+    xfce.ristretto
     # mcomix
   ];
   users.users.${config.mystuff.username}.packages = with pkgs; [

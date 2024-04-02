@@ -128,7 +128,11 @@
             "media.rdd-vpx.enabled" = true;
           };
           extraConfig = lib.strings.concatStrings [
-            "${builtins.readFile ./arkenfox.js}"
+            "${builtins.readFile (fetchGit {
+                url = "https://github.com/arkenfox/user.js";
+                rev = "33a84b608c8a1f871c6ce9c4d2b932dc57078fae"; #122.0
+              }
+              + "/user.js")}\n"
 
             ''
               user_pref("browser.search.suggest.enabled",true);
