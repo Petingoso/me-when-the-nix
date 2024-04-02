@@ -29,7 +29,7 @@ change_theme()
 {
 	cp ${hypr_dir}/$1.conf ${hypr_dir}/hypr_theme
 	cp ${rofi_dir}/$1.rasi ${rofi_dir}/colors.rasi
-	cp ${kitty_dir}/colorscheme/$1.conf ${kitty_dir}/kitty_theme
+	cp ${kitty_dir}/$1.conf ${kitty_dir}/kitty_theme
 	sed -i 's/\(.*colorscheme\s*\)[^"]*/\1'"$1"'/' $nvim_settings #sed to switch color
 	if [[ "$1" == "cozy-night" ]]; then
 		# nvim
