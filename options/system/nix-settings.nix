@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  self,
   ...
 }: {
   options.mystuff = {
@@ -8,6 +9,9 @@
   };
 
   config = lib.mkIf config.mystuff.nixsettings.enable {
+    environment.etc."nixos/current".source = lib.cleanSource "${self}";
+    system.configurationRevision = self.dirtyRev;
+
     nix.settings = {
       experimental-features = [
         "flakes"
