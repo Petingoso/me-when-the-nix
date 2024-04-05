@@ -10,7 +10,8 @@
 
   config = lib.mkIf config.mystuff.firefox-config.enable {
     home-manager.users.${config.mystuff.username} = {
-      xdg.configFile."firefox/treestyle-tab.json".source = ./config.json; ## source manually in extensions
+      xdg.configFile."firefox/treestyle-tab.json".source = ./tst.json; ## source manually in extensions
+      xdg.configFile."firefox/tabnine.json".source = ./tab-nine.json; ## source manually in extensions
       programs.firefox = {
         enable = true;
 
@@ -64,6 +65,7 @@
                 (extension "tst-search" "@tst-search")
                 (extension "tst-fade-old-tabs" "tst_fade_old_tabs@emvaized.com")
                 (extension "ublock-origin" "uBlock0@raymondhill.net")
+                (extension "tab-nine" "extension@tab-nine.xsfs.xyz")
               ];
             # To add additional extensions, find it on addons.mozilla.org, find
             # the short ID in the url (like https://addons.mozilla.org/en-US/firefox/addon/!SHORT_ID!/)

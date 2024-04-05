@@ -1,0 +1,44 @@
+{
+  "background": {
+    "id": "xRhhuFYUr76E",
+    "key": "background/colour",
+    "display": { "blur": 0, "luminosity": -0.2 }
+  },
+  "data/xRhhuFYUr76E": { "colour": "#000000" },
+  "widget/default-greeting": {
+    "id": "default-greeting",
+    "key": "widget/greeting",
+    "order": 2,
+    "display": {
+      "position": "middleCentre",
+      "useAccentColor": true,
+      "fontFamily": "Courier New"
+    }
+  },
+  "accent": "#c01c28",
+  "widget/default-time": {
+    "id": "default-time",
+    "key": "widget/time",
+    "order": 1,
+    "display": {
+      "position": "middleCentre",
+      "useAccentColor": false,
+      "fontFamily": "Courier New"
+    }
+  },
+  "data/z-Nb00ieaYqI": { "searchEngine": "searx", "suggestionsQuantity": 4 },
+  "widget/z-Nb00ieaYqI": {
+    "id": "z-Nb00ieaYqI",
+    "key": "widget/search",
+    "order": 0,
+    "display": {
+      "position": "middleCentre",
+      "useAccentColor": false,
+      "fontFamily": "Courier New"
+    }
+  },
+  "focus": false,
+  "locale": "en",
+  "timeZone": null,
+  "version": 3
+}
