@@ -10,7 +10,7 @@
 
   config = lib.mkIf config.mystuff.firefox-config.enable {
     home-manager.users.${config.mystuff.username} = {
-      xdg.configFile."firefox/treestyle-tab.json".source = ./config.json;
+      xdg.configFile."firefox/treestyle-tab.json".source = ./config.json; ## source manually in extensions
       programs.firefox = {
         enable = true;
 
@@ -38,16 +38,15 @@
               SkipOnboarding = true;
             };
             ExtensionSettings = let
-              inherit (builtins) listToAttrs;
               extension = shortId: uuid: {
                 name = uuid;
                 value = {
-                  install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
+                  install_url = "https://addons.mozilla.org/firefox/downloads/latest/${shortId}/latest.xpi";
                   installation_mode = "normal_installed";
                 };
               };
             in
-              listToAttrs [
+              builtins.listToAttrs [
                 (extension "auto-tab-discard" "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}")
                 (extension "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
                 (extension "buster-captcha-solver" "{e58d3966-3d76-4cd9-8552-1582fbc800c1}")
@@ -148,6 +147,7 @@
               visibility: collapse;
             }
           '';
+
           userContent = "";
         };
       };

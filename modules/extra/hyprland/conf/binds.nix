@@ -7,7 +7,7 @@
   lock_cmd = "${pkgs.playerctl}/bin/playerctl pause; ${config.programs.hyprlock.package}/bin/hyprlock";
   rofi-menu = "rofi -show drun -theme ~/.config/rofi/launchers/menu.rasi";
 in {
-  home.packages = with pkgs; [hyprshade grim slurp swappy playerctl wl-clipboard];
+  home.packages = with pkgs; [hyprshade grim slurp swappy playerctl wl-clipboard libnotify];
   xdg.configFile."hypr/blue-light-filter.glsl".source = ./blue-light.glsl;
   wayland.windowManager.hyprland.settings = {
     bindm = ["ALT,mouse:272,movewindow" "ALT,mouse:273,resizewindow"];
