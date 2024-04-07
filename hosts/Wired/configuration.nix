@@ -43,7 +43,6 @@
     zsh.zinit.enable = true;
   };
   #####
-
   #legion 5 shit
   hardware.opengl = {
     enable = true;
@@ -52,11 +51,9 @@
   };
 
   hardware.nvidia = {
-    open = false;
     prime.amdgpuBusId = lib.mkForce "PCI:5:0:0"; ##override nixosHardware option
-    # package = config.boot.kernelPackages.nvidiaPackages.beta;
+    powerManagement.enable = true;
   };
-
   services.xserver.videoDrivers = ["nvidia" "amdgpu"];
   specialisation = {
     disable-dGPU = {
