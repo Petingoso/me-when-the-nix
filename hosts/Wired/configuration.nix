@@ -17,6 +17,7 @@
     ../../modules/system/sound.nix
     ../../modules/extra/hyprland
     ../../modules/extra/fcitx.nix
+    ../../modules/extra/kleopatra.nix
     ../../modules/extra/opensnitch.nix
     ../../modules/extra/opentabletdriver.nix
     ../../modules/extra/scripts
