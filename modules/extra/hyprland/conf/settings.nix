@@ -44,7 +44,6 @@
       blur.passes = 2;
       blur.new_optimizations = true;
       blur.ignore_opacity = true;
-      blur.xray = true;
 
       drop_shadow = 1;
       shadow_range = 20;
@@ -80,6 +79,8 @@
       "noinitialfocus,class:^(xwaylandvideobridge)$"
     ];
 
-    layerrule = ["blur, swaync-control-center" "ignorealpha 0.4, swaync-control-center"];
+    layerrule = ["blur, swaync-control-center" "ignorezero, swaync-control-center"];
+
+    workspace = ["w[t1], gapsout:0, border:0"];
   };
 }

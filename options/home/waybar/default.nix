@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   lib,
   ...
 }: let
@@ -16,6 +15,7 @@ in {
         settings = [
           {
             position = "left";
+            layer = "top";
             modules-left = ["custom/icon" "hyprland/workspaces"];
             modules-right = [
               "custom/notification"

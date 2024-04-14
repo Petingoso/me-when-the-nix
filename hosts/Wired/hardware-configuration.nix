@@ -17,10 +17,15 @@
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
 
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "weekly";
+  };
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/052ebb9a-e75a-49df-b0be-957e671e0bb1";
     fsType = "btrfs";
-    options = ["subvol=@" "noatime" "compress=zstd:3" "ssd" "discard=async" "space_cache=v2" "autodefrag"];
+    options = ["subvol=@" "noatime" "compress=zstd:3"];
   };
 
   fileSystems."/boot" = {
@@ -32,19 +37,25 @@
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/052ebb9a-e75a-49df-b0be-957e671e0bb1";
     fsType = "btrfs";
-    options = ["subvol=@home" "compress=zstd:3" "ssd" "discard=async" "space_cache=v2" "autodefrag"];
+    options = ["subvol=@home"];
   };
 
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/052ebb9a-e75a-49df-b0be-957e671e0bb1";
     fsType = "btrfs";
-    options = ["subvol=@nix" "noatime" "compress=zstd:6" "ssd" "discard=async" "space_cache=v2" "autodefrag"];
+    options = ["subvol=@nix" "noatime"];
   };
 
   fileSystems."/var/log" = {
     device = "/dev/disk/by-uuid/052ebb9a-e75a-49df-b0be-957e671e0bb1";
     fsType = "btrfs";
-    options = ["subvol=@log" "noatime" "compress=zstd:6" "ssd" "discard=async" "space_cache=v2" "autodefrag"];
+    options = ["subvol=@log" "noatime"];
+  };
+
+  fileSystems."/misc" = {
+    device = "/dev/disk/by-uuid/ba45aff9-ea34-481e-97e8-9714b23e89e8";
+    fsType = "btrfs";
+    options = ["noatime"];
   };
 
   fileSystems."/hdd" = {
