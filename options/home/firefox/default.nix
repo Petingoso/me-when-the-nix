@@ -141,7 +141,7 @@
               user_pref("privacy.clearOnShutdown.history" , false);
               user_pref("browser.privatebrowsing.autostart" , false);
               user_pref("places.history.enabled" , true);
-              user_pref("keyword.enabled" , true;
+              user_pref("keyword.enabled" , true);
             ''
           ];
           userChrome = ''

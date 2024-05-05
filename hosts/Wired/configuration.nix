@@ -71,6 +71,7 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   # Use the systemd-boot EFI boot loader.
+  programs.nix-ld.enable = true;
 
   programs.kdeconnect.enable = true;
 
@@ -90,6 +91,7 @@
     piper
     qbittorrent
     xfce.ristretto
+    p7zip
     # mcomix
   ];
   users.users.${config.mystuff.username}.packages = with pkgs; [
