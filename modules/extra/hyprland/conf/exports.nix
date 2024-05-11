@@ -1,4 +1,4 @@
-{...}: {
+{osConfig, ...}: {
   wayland.windowManager.hyprland.settings.env = [
     "CLUTTER_BACKEND,wayland"
     "XDG_SESSION_TYPE,wayland"
@@ -18,5 +18,6 @@
     "QT_STYLE_OVERRIDE,kvantum"
 
     "LC_ALL,C"
+    "FLAKE,/home/${osConfig.mystuff.username}/flake"
   ];
 }

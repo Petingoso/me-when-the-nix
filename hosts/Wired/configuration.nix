@@ -5,6 +5,7 @@
   pkgs,
   lib,
   config,
+  self,
   ...
 }: {
   imports = [
@@ -71,7 +72,6 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   # Use the systemd-boot EFI boot loader.
-  programs.nix-ld.enable = true;
 
   programs.kdeconnect.enable = true;
 
@@ -92,6 +92,7 @@
     qbittorrent
     xfce.ristretto
     p7zip
+    wdisplays
     # mcomix
   ];
   users.users.${config.mystuff.username}.packages = with pkgs; [
@@ -100,6 +101,7 @@
     ckan
     dualsensectl
     evince
+    fastfetch
     heroic
     # hydrus
     krita
@@ -120,5 +122,6 @@
     wineWowPackages.waylandFull
     youtube-music
     miru
+    (callPackage "${self}/pkgs/olympus/package.nix" {})
   ];
 }

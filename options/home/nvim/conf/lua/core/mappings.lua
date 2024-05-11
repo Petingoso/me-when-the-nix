@@ -54,6 +54,7 @@ end, { desc = "[/] Fuzzily search in current buffer]" })
 -- basic mappings
 map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
+map("n", "<leader>hh", vim.lsp.buf.hover, { desc = "[H]over Options" })
 map("n", "gd", vim.lsp.buf.definition, { desc = "[G]oto [D]efinition" })
 -- map('n', "gi"        , vim.lsp.buf.implementation, { desc = "[G]oto [I]mplementation" })
 map("n", "<leader>ds", telescope.lsp_document_symbols, { desc = "[D]ocument [S]ymbols" })

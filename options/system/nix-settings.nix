@@ -11,7 +11,6 @@
   config = lib.mkIf config.mystuff.nixsettings.enable {
     nixpkgs.config.allowUnfree = true;
     environment.etc."nixos/current".source = lib.cleanSource "${self}";
-    system.configurationRevision = self.dirtyRev;
 
     nix.settings = {
       experimental-features = [
