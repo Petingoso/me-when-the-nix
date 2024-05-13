@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{...}: let
   text_color = "rgba(eae0e4FF)";
   entry_background_color = "rgba(120F1111)";
   entry_border_color = "rgba(9a8d9555)";
@@ -6,8 +6,8 @@
 in {
   programs.hyprlock.enable = true;
 
-  programs.hyprlock = {
-    backgrounds = [
+  programs.hyprlock.settings = {
+    background = [
       {
         color = "rgba(120F1177)";
         path = "screenshot";

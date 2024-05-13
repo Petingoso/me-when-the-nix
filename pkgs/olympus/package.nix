@@ -16,7 +16,7 @@
   gnome,
   zenity ? gnome.zenity,
   buildFHSEnv,
-  xdg-utils
+  xdg-utils,
 }:
 # WONTFIX: On NixOS, cannot launch Steam installations of Everest / Celeste from Olympus.
 # The way it launches Celeste is by directly executing steamapps/common/Celeste/Celeste,
