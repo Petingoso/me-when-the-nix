@@ -49,7 +49,7 @@
         home-manager.users.${config.mystuff.username} = {
           qt = {
             enable = true;
-            platformTheme = "qtct";
+            platformTheme.name = "qtct";
             style.name = "kvantum";
           };
           home.packages = with pkgs; [libsForQt5.qtstyleplugin-kvantum];
