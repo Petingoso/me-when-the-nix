@@ -16,19 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-gaming = {
-      url = "github:fufexan/nix-gaming";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
     };
-
-    nh = {
-      url = "github:viperML/nh";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     miru.url = "github:karitham/knixpkgs";
+
   };
 }
