@@ -8,22 +8,25 @@ in {
   services.hypridle = {
     enable = true;
     settings = {
-      lockCmd = lock_cmd;
-      listeners = [
+      general = {
+        lock_cmd = lock_cmd;
+        unlock_cmd = "";
+        after_sleep_cmd = "";
+        before_sleep_cmd = lock_cmd;
+      };
+
+      listener = [
         {
           timeout = 500;
-          onTimeout = lock_cmd;
-          onResume = "";
+          on-timeout = lock_cmd;
+          on-resume = "";
         }
         {
           timeout = 600;
-          onTimeout = "systemctl suspend";
-          onResume = "";
+          on-timeout = "systemctl suspend";
+          on-resume = "";
         }
       ];
-      unlockCmd = "";
-      afterSleepCmd = "";
-      beforeSleepCmd = lock_cmd;
     };
   };
 }

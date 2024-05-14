@@ -16,10 +16,9 @@ in {
       }
     ];
 
-    input-fields = [
+    input-field = [
       {
-        size.width = 600;
-        size.height = 50;
+        size = "400, 50";
         outline_thickness = 3;
         dots_size = 0.1;
         dots_spacing = 0.3;
@@ -28,22 +27,20 @@ in {
         font_color = entry_color;
         fade_on_empty = true;
 
-        position.x = 0;
-        position.y = 20;
+        position = "0, 20";
 
         halign = "center";
         valign = "center";
       }
     ];
 
-    labels = [
+    label = [
       {
         #clock
         text = "$TIME";
         color = text_color;
         font_size = 65;
-        position.x = 0;
-        position.y = 300;
+        position = "0, 300";
         halign = "center";
         valign = "center";
       }
@@ -51,8 +48,7 @@ in {
         text = "hi $USER";
         color = text_color;
         font_size = 20;
-        position.x = 0;
-        position.y = 240;
+        position = "0, 240";
         halign = "center";
         valign = "center";
       }
