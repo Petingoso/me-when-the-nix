@@ -6,6 +6,8 @@
     exec = ["pkill waybar;waybar &"];
     exec-once = [
       "GDK_BACKEND=x11 pcloud"
+      "${pkgs.kdeconnect}/libexec/kdeconnectd"
+
       "${pkgs.swaynotificationcenter}"
       "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       "fcitx5"
