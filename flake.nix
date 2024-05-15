@@ -21,6 +21,5 @@
     };
     miru.url = "github:karitham/knixpkgs";
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 }
