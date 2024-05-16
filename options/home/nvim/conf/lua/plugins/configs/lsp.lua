@@ -4,8 +4,6 @@ local lspconfig = require("lspconfig")
 
 -- nvim-cmp supports additional completion capabilities
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local on_attach = function(_, bufnr)
 	-- to define small helper and utility functions so you don't have to repeat yourself
