@@ -122,6 +122,6 @@
     wineWowPackages.waylandFull
     youtube-music
     miru
-    (callPackage "${self}/pkgs/olympus/package.nix" {})
+    # (callPackage "${self}/pkgs/olympus/package.nix" {})
   ];
 }
