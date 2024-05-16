@@ -55,7 +55,7 @@ local tools = {
 		end,
 	},
 
-	{ "rcarriga/nvim-dap-ui", dependencies = {"msfussenger/nvim-dap", "nvim-neotest/nvim-nio"}, lazy = true },
+	{ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }, lazy = true },
 
 	-- Manage external editor tooling i.e LSP servers
 	-- {

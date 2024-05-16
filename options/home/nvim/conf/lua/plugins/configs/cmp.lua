@@ -33,7 +33,6 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "luasnip", priority = 10 }, -- Force snippet/lsp suggestions to the top
 		{ name = "nvim_lsp", priority = 9 },
-		{ name = "nvim-lua" },
 		{ name = "path" },
 		{ name = "kitty", option = {
 			listen_on = "/tmp/kitty*",
@@ -84,7 +83,7 @@ cmp.setup({
 		end,
 	},
 	experimental = {
-		ghost_text = false,
+		ghost_text = true,
 	},
 	view = {
 		entries = "custom",

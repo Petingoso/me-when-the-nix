@@ -13,7 +13,7 @@ local gitsigns = require("gitsigns")
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true }) -- space not do anything on visual
 map("n", "<C-x>", "<cmd>!xdg-open %<CR>", { desc = "Open file on xdg-open" })
 
-map("n", "<leader>d", '"_d', { silent = true, desc = "delete without cut" })
+map("n", "<leader>dd", '"_d', { silent = true, desc = "delete without cut" })
 map("v", "<leader>", '"_d', { silent = true, desc = "delete without cut Visual" })
 map("v", "<leader>p", '"_dP', { silent = true, desc = "Paste from non cut" })
 

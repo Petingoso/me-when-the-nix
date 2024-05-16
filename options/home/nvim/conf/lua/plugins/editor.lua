@@ -56,7 +56,7 @@ local editor = {
 			"hrsh7th/cmp-path",
 			"f3fora/cmp-spell",
 		},
-		event = "InsertEnter",
+		-- event = "InsertEnter",
 		config = function()
 			require("plugins.configs.cmp")
 		end,

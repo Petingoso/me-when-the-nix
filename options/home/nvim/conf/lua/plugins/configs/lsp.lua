@@ -2,6 +2,11 @@
 --  This function gets run when an LSP connects to a particular buffer.
 local lspconfig = require("lspconfig")
 
+-- nvim-cmp supports additional completion capabilities
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 local on_attach = function(_, bufnr)
 	-- to define small helper and utility functions so you don't have to repeat yourself
 	-- many times.
@@ -22,8 +27,7 @@ local servers = { "nil_ls", "clangd" }
 for _, lsp_server in ipairs(servers) do
 	lspconfig[lsp_server].setup({
 		on_attach = on_attach,
+		capabilities = capabilities,
 		flags = {},
 	})
 end
--- nvim-cmp supports additional completion capabilities
-local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
