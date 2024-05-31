@@ -20,6 +20,5 @@
       url = "github:NixOS/nixos-hardware";
     };
     miru.url = "github:karitham/knixpkgs";
-
   };
 }
