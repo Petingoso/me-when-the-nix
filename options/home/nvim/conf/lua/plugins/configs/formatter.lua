@@ -15,7 +15,7 @@ local ClangConfig = function()
 		args = {
 			"--assume-filename",
 			util.escape_path(util.get_current_buffer_file_name()),
-			'--style="{BasedOnStyle: google, AllowShortFunctionsOnASingleLine : Empty, IndentWidth: 4, TabWidth: 4, }"',
+			'--style="{BasedOnStyle: LLVM, AllowShortFunctionsOnASingleLine : All, IndentWidth: 4, TabWidth: 4, }"',
 		},
 		stdin = true,
 		try_node_modules = true,

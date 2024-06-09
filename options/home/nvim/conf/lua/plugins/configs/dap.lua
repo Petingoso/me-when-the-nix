@@ -1,23 +1,37 @@
 local dap_ui_ok, ui = pcall(require, "dapui")
 local dap = require("dap")
 
-dap.adapters.gdb = {
+dap.adapters.cppdbg = {
+	id = "cppdbg",
 	type = "executable",
-	command = "gdb",
-	args = { "-i", "dap" },
+	command = os.getenv("HOME")
+		.. "/.nix-profile/share/vscode/extensions/ms-vscode.cpptools/debugAdapters/bin/OpenDebugAD7",
 }
 dap.configurations.cpp = {
 	{
-		name = "Launch",
-		type = "gdb",
+		name = "Launch file",
+		type = "cppdbg",
 		request = "launch",
 		program = function()
 			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
 		end,
 		cwd = "${workspaceFolder}",
-		stopAtBeginningOfMainSubprogram = false,
+		stopAtEntry = true,
+	},
+	{
+		name = "Attach to gdbserver :1234",
+		type = "cppdbg",
+		request = "launch",
+		MIMode = "gdb",
+		miDebuggerServerAddress = "localhost:1234",
+		miDebuggerPath = "gdb",
+		cwd = "${workspaceFolder}",
+		program = function()
+			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+		end,
 	},
 }
+
 ui.setup({
 	icons = { expanded = "▾", collapsed = "▸" },
 	mappings = {
