@@ -5,6 +5,7 @@
   pkgs,
   lib,
   config,
+  self,
   ...
 }: {
   imports = [
@@ -122,5 +123,6 @@
     youtube-music
     miru
     # (callPackage "${self}/pkgs/olympus/package.nix" {})
+    (callPackage "${self}/pkgs/steam-run-ksp.nix" {})
   ];
 }
