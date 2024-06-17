@@ -1,8 +1,12 @@
-{inputs,config, ...}: {
+{
+  inputs,
+  config,
+  ...
+}: {
   programs.hyprland.enable = true;
   home-manager.users.${config.mystuff.username} = {
-    wayland.windowManager.hyprland.enable = true;
     imports = [
+      inputs.hyprland.homeManagerModules.default
       ./hypridle.nix
       ./hyprlock.nix
       ./conf/binds.nix
@@ -10,5 +14,6 @@
       ./conf/settings.nix
       ./conf/startup.nix
     ];
+    wayland.windowManager.hyprland.enable = true;
   };
 }
