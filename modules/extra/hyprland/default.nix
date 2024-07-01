@@ -6,7 +6,7 @@
   programs.hyprland.enable = true;
   home-manager.users.${config.mystuff.username} = {
     imports = [
-      inputs.hyprland.homeManagerModules.default
+      # inputs.hyprland.homeManagerModules.default
       ./hypridle.nix
       ./hyprlock.nix
       ./conf/binds.nix

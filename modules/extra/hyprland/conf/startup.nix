@@ -12,7 +12,7 @@
       "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       "fcitx5"
       "opensnitch-ui"
-      "${pkgs.wl-clip-persist}/bin/wl-clip-persist --clipboard regular"
+      "${pkgs.wl-clip-persist}/bin/wl-clip-persist --clipboard regular --reconnect-tries 1 "
     ];
   };
 }
