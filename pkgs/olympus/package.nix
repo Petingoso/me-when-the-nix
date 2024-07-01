@@ -6,15 +6,11 @@
   mono4,
   love,
   lua51Packages,
-  lua,
+  nfd,
   msbuild,
   sqlite,
   curl,
   libarchive,
-  pkg-config,
-  substituteAll,
-  gnome,
-  zenity ? gnome.zenity,
   buildFHSEnv,
   xdg-utils,
 }:
@@ -22,8 +18,10 @@
 # The way it launches Celeste is by directly executing steamapps/common/Celeste/Celeste,
 # and it does not work on NixOS (even with steam-run).
 # This should be considered a bug of Steam on NixOS (and is probably very hard to fix).
+
 # FIXME: olympus checks if xdg-mime x-scheme-handler/everest for a popup. If it's not set it complains about it.
 # I'm pretty sure thats by user so end user needs to do it
+
 let
   lua-subprocess = lua51Packages.buildLuarocksPackage {
     pname = "subprocess";
@@ -41,7 +39,6 @@ let
   fhs-env = buildFHSEnv {
     name = "olympus-fhs";
     targetPkgs = pkgs: (with pkgs; [
-      xdg-utils
       icu
       stdenv.cc.cc
       libgcc.lib
@@ -49,6 +46,7 @@ let
     ]);
     runScript = "bash";
   };
+
 
   lsqlite3 = lua51Packages.buildLuarocksPackage {
     pname = "lsqlite3";
@@ -58,36 +56,6 @@ let
       hash = "sha256-Mq409A3X9/OS7IPI/KlULR6ZihqnYKk/mS/W/2yrGBg=";
     };
     buildInputs = [sqlite.dev];
-  };
-
-  # FIXME: While fix isnt merged pull/309026, using it manually
-  nfd = lua51Packages.buildLuarocksPackage {
-    pname = "nfd";
-    version = "scm-1";
-
-    src = fetchFromGitHub {
-      owner = "Vexatos";
-      repo = "nativefiledialog";
-      rev = "2f74a5758e8df9b27158d444953697bc13fe90d8";
-      sha256 = "1f52mb0s9zrpsqjp10bx92wzqmy1lq7fg1fk1nd6xmv57kc3b1qv";
-      fetchSubmodules = true;
-    };
-
-    # use zenity because default gtk impl just crashes
-    patches = [
-      (substituteAll {
-        src = ./zenity.patch;
-        inherit zenity;
-      })
-    ];
-    knownRockspec = "lua/nfd-scm-1.rockspec";
-
-    luarocksConfig.variables.LUA_LIBDIR = "${lua}/lib";
-    nativeBuildInputs = [pkg-config];
-
-    fixupPhase = ''
-      find $out -name nfd_zenity.so -execdir mv {} nfd.so \;
-    '';
   };
 
   dotnet-out = "sharp/bin/Release/net452";
