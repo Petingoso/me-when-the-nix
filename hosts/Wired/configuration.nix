@@ -46,10 +46,9 @@
   };
   #####
   #legion 5 shit
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   hardware.nvidia = {
@@ -121,8 +120,13 @@
     vscodium
     wineWowPackages.waylandFull
     youtube-music
-    miru
-    # (callPackage "${self}/pkgs/olympus/package.nix" {})
+    # miru
+    (callPackage "${self}/pkgs/olympus/package.nix" {})
     (callPackage "${self}/pkgs/steam-run-ksp.nix" {})
   ];
+
+  # might be needed for open tablet driver to work?
+  #   services.udev.extraRules = ''
+  #   KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+  # '';
 }
