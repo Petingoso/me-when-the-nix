@@ -6,7 +6,6 @@
   mono4,
   love,
   lua51Packages,
-  nfd,
   msbuild,
   sqlite,
   curl,
@@ -61,6 +60,7 @@ let
   dotnet-out = "sharp/bin/Release/net452";
   pname = "olympus";
   phome = "$out/lib/${pname}";
+  nfd = lua51Packages.nfd;
 in
   buildDotnetModule rec {
     inherit pname;
