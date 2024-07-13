@@ -123,6 +123,8 @@
     # miru
     (callPackage "${self}/pkgs/olympus/package.nix" {})
     (callPackage "${self}/pkgs/steam-run-ksp.nix" {})
+    xdg-utils
+    gamescope
   ];
 
   # might be needed for open tablet driver to work?
