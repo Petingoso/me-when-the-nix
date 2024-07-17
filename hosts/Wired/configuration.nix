@@ -128,7 +128,7 @@
   ];
 
   # might be needed for open tablet driver to work?
-  #   services.udev.extraRules = ''
+    services.udev.extraRules = ''
   #   KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
   # '';
 }
