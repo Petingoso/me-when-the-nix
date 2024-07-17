@@ -33,8 +33,6 @@
 
     dwindle = {preserve_split = true;};
 
-    master = {new_is_master = false;};
-
     animations = {enabled = 1;};
 
     decoration = {
