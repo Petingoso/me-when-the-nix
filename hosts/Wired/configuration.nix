@@ -125,10 +125,11 @@
     (callPackage "${self}/pkgs/steam-run-ksp.nix" {})
     xdg-utils
     gamescope
+    r2modman
   ];
 
   # might be needed for open tablet driver to work?
-    services.udev.extraRules = ''
-  #   KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
-  # '';
+  services.udev.extraRules = ''
+    #   KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+    # '';
 }
