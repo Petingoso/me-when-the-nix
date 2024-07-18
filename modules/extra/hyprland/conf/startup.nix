@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   wayland.windowManager.hyprland.settings = {
     exec = ["pkill waybar;waybar &"];
     exec-once = [
