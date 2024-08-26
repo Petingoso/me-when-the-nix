@@ -17,8 +17,10 @@
 # The way it launches Celeste is by directly executing steamapps/common/Celeste/Celeste,
 # and it does not work on NixOS (even with steam-run).
 # This should be considered a bug of Steam on NixOS (and is probably very hard to fix).
+
 # FIXME: olympus checks if xdg-mime x-scheme-handler/everest for a popup. If it's not set it complains about it.
 # I'm pretty sure thats by user so end user needs to do it
+
 let
   lua-subprocess = lua51Packages.buildLuarocksPackage {
     pname = "subprocess";
@@ -44,6 +46,7 @@ let
     runScript = "bash";
   };
 
+
   lsqlite3 = lua51Packages.buildLuarocksPackage {
     pname = "lsqlite3";
     version = "0.9.6-1";
@@ -63,14 +66,14 @@ in
     inherit pname;
 
     # FIXME: I made up this version number.
-    version = "24.04.23.02";
+    version = "24.07.06.02";
 
     src = fetchFromGitHub {
       owner = "EverestAPI";
       repo = "Olympus";
-      rev = "6b4ceee45b51b913cf1d50bfb3ae645b21bba4f1";
+      rev = "5f3e40687eb825c57021f52d83a3bc9a82c04bdb";
       fetchSubmodules = true; # Required. See upstream's README.
-      hash = "sha256-FtvTELf8EZCkoAmMbgwxftxXOzdXy0P69RRMyPlRXUA=";
+      hash = "sha256-rNh6sH51poahiV0Mb61lHfzqOkPF2pW2wr7MOrfVSVs=";
     };
 
     executables = [];
