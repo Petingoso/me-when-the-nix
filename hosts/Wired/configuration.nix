@@ -22,6 +22,7 @@
     ../../modules/extra/opensnitch.nix
     ../../modules/extra/opentabletdriver.nix
     ../../modules/extra/scripts
+    ../../modules/extra/libvirt.nix
   ];
   system.stateVersion = "23.11";
 
@@ -127,7 +128,6 @@
     gamescope
     r2modman
   ];
-
   # might be needed for open tablet driver to work?
   services.udev.extraRules = ''
     #   KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
