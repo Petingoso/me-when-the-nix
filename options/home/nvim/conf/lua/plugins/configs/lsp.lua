@@ -20,7 +20,10 @@ local on_attach = function(_, bufnr)
 	end
 end
 
-local servers = { "nil_ls", "clangd" }
+local servers = { "nil_ls", "clangd", "cssls", "html" }
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 for _, lsp_server in ipairs(servers) do
 	lspconfig[lsp_server].setup({

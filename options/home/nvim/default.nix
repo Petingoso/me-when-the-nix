@@ -9,11 +9,11 @@
   };
   config = lib.mkIf config.mystuff.nvim-config.enable {
     home-manager.users.${config.mystuff.username} = {
-      home.packages = with pkgs; [nil stylua beautysh clang-tools prettierd ripgrep lua-language-server vscode-extensions.ms-vscode.cpptools];
+      home.packages = with pkgs; [nil stylua beautysh clang-tools prettierd ripgrep lua-language-server vscode-extensions.ms-vscode.cpptools vscode-langservers-extracted];
 
       programs.neovim = {
         enable = true;
-        extraPackages = [pkgs.gcc pkgs.unzip];
+        extraPackages = [pkgs.gcc pkgs.unzip pkgs.hurl pkgs.jq pkgs.nodePackages.browser-sync];
       };
 
       home.file."./.config/nvim" = {

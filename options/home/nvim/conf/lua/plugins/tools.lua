@@ -82,6 +82,12 @@ local tools = {
 	{ "ekickx/clipboard-image.nvim" }, --:PasteImg to paste an image
 	{ "ibhagwan/smartyank.nvim" }, --better yank
 	{ "tpope/vim-sleuth" }, -- Detect tabstop and shiftwidth automatically
+	{
+		"ray-x/web-tools.nvim",
+		config = function()
+			require("plugins.configs.web-tools")
+		end,
+	}, -- Browser Sync and the sort
 }
 
 return tools
