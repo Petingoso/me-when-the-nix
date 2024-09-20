@@ -24,7 +24,7 @@
         };
 
         home.packages = with pkgs; [
-          gnome.adwaita-icon-theme
+          adwaita-icon-theme
           gnome.nixos-gsettings-overrides
           nordic
           (callPackage "${self}/pkgs/everforest.nix" {})
