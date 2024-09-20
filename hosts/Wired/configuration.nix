@@ -7,7 +7,19 @@
   config,
   self,
   ...
-}: {
+}: let
+  patchelfFixes = pkgs.patchelfUnstable.overrideAttrs (_finalAttrs: _previousAttrs: {
+    src = pkgs.fetchFromGitHub {
+      owner = "Patryk27";
+      repo = "patchelf";
+      rev = "527926dd9d7f1468aa12f56afe6dcc976941fedb";
+      sha256 = "sha256-3I089F2kgGMidR4hntxz5CKzZh5xoiUwUsUwLFUEXqE=";
+    };
+  });
+  pcloudFixes = pkgs.pcloud.overrideAttrs (_finalAttrs:previousAttrs: {
+    nativeBuildInputs = previousAttrs.nativeBuildInputs ++ [patchelfFixes];
+  });
+in {
   imports = [
     ../../modules/system/systemd-boot.nix
     ../../modules/system/bluetooth.nix
@@ -80,14 +92,14 @@
     btrbk
     compsize
     font-manager
-    gnome.gnome-disk-utility
+    gnome-disk-utility
     libreoffice
     lxappearance
     mpv
     mpvScripts.mpris
     ncpamixer
-    cinnamon.nemo
-    cinnamon.nemo-fileroller
+    nemo
+    nemo-fileroller
     piper
     qbittorrent
     xfce.ristretto
@@ -127,6 +139,7 @@
     xdg-utils
     gamescope
     r2modman
+    pcloudFixes
   ];
   # might be needed for open tablet driver to work?
   services.udev.extraRules = ''
