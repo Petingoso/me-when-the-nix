@@ -9,6 +9,7 @@
     monitor = ",preferred,auto,1";
 
     input = {
+      sensitivity = 1;
       kb_layout = "pt";
       follow_mouse = 1;
       force_no_accel = true;
@@ -23,8 +24,6 @@
     };
 
     general = {
-      sensitivity = 1;
-
       gaps_in = 5;
       gaps_out = 5;
       border_size = 2;

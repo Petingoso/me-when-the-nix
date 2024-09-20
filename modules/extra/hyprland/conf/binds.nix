@@ -24,6 +24,7 @@ in {
         "ALT, Return, exec, kitty -1"
 
         "ALT, B, exec, pkill -SIGUSR1 'waybar'"
+        "ALT SHIFT, B, exec, pkill -SIGUSR2 'waybar'"
 
         ",Print,exec,grim $HOME/Pictures/SS/$(date +'%Y%m%d%H%M%S_1.png') && notify-send 'Screenshot Saved'"
 
