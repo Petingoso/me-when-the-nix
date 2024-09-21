@@ -54,6 +54,14 @@ local tools = {
 			require("plugins.configs.dap")
 		end,
 	},
+	{
+		"mfussenegger/nvim-dap-python",
+		event = "VeryLazy",
+		dependencies = { "mfussenegger/nvim-dap" },
+		config = function()
+			require("dap-python").setup("python")
+		end,
+	},
 
 	{ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }, lazy = true },
 
