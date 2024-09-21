@@ -29,6 +29,7 @@ in {
     ../../modules/system/pt_locale.nix
     ../../modules/system/sound.nix
     ../../modules/extra/hyprland
+    ../../modules/extra/direnv.nix
     ../../modules/extra/fcitx.nix
     ../../modules/extra/kleopatra.nix
     ../../modules/extra/opensnitch.nix
