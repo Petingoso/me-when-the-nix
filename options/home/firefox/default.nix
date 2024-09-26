@@ -131,7 +131,7 @@
           extraConfig = lib.strings.concatStrings [
             "${builtins.readFile (fetchGit {
                 url = "https://github.com/arkenfox/user.js";
-                rev = "47cbf5b9740ef59ed866874346d3fee3379f8da3"; #126.1
+                rev = "f906f7f3b41fe3f6aaa744980431f4fdcd086379"; #126.1
               }
               + "/user.js")}\n"
 
