@@ -138,6 +138,7 @@
             ''
               user_pref("browser.search.suggest.enabled",true);
               user_pref("privacy.cpd.history" , false);
+            user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false);
               user_pref("privacy.clearOnShutdown.history" , false);
               user_pref("browser.privatebrowsing.autostart" , false);
               user_pref("places.history.enabled" , true);
