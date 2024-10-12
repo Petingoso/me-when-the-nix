@@ -65,6 +65,22 @@ local tools = {
 
 	{ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }, lazy = true },
 
+	--for tests
+	{
+		"nvim-neotest/neotest",
+		event = "VeryLazy",
+		dependencies = {
+			"nvim-neotest/nvim-nio",
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		config = function()
+			require("plugins.configs.neotest")
+		end,
+	},
+	{ "nvim-neotest/neotest-python", event = "VeryLazy", dependencies = "nvim-neotest/neotest" },
+
 	-- Manage external editor tooling i.e LSP servers
 	-- {
 	-- 	"williamboman/mason.nvim",

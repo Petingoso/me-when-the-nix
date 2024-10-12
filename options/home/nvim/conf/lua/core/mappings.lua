@@ -8,6 +8,7 @@ local dap_ui = require("dapui")
 local telescope = require("telescope.builtin")
 local splits = require("smart-splits")
 local gitsigns = require("gitsigns")
+local neotest = require("neotest")
 
 --"Vanilla Keymaps"
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true }) -- space not do anything on visual
@@ -125,6 +126,11 @@ map("n", "<localleader>ds", function()
 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-w>=", false, true, true), "n", false) -- Spaces buffers evenly
 end, { desc = "Start [D]ebug [S]ession" })
 
+map("n", "<localleader>dt", function()
+	dap_ui.toggle({})
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-w>=", false, true, true), "n", false)
+end, { desc = "[T]oggle UI" })
+
 -- Set breakpoints, get variable values, step into/out of functions, etc.
 map("n", "<localleader>dl", require("dap.ui.widgets").hover)
 map("n", "<localleader>dc", dap.continue, { desc = "DAP continue" })
@@ -133,6 +139,16 @@ map("n", "<localleader>dn", dap.step_over, { desc = "DAP step next" })
 map("n", "<localleader>di", dap.step_into, { desc = "DAP step into" })
 map("n", "<localleader>do", dap.step_out, { desc = "DAP setp out" })
 map("n", "<localleader>dC", dap.clear_breakpoints, { desc = "DAP Clear Breakpoints" })
+
+-- neotest 
+map('n','<localleader>tt',neotest.run.run,		     { noremap = true, silent = true, desc = 'Run nearest [t]est' })
+map('n','<localleader>tf',function()
+	neotest.run.run(vim.fn.expand("%"))
+end,{ noremap = true, silent = true, desc = 'Run all tests in [file]' })
+map('n','<localleader>ts',neotest.run.stop,		     { noremap = true, silent = true, desc = '[S]top nearest test' })
+map('n','<localleader>too',":Neotest output<CR>",		     { noremap = true, silent = true, desc = 'Show [O]utput' })
+map('n','<localleader>top',":Neotest output-panel<CR>",		     { noremap = true, silent = true, desc = 'Show [O]utput [P]anel' })
+map('n','<localleader>ts',neotest.summary.toggle,	     { noremap = true, silent = true, desc = 'Show [S]ummary' })
 --
 -- Close debugger and clear breakpoints
 map("n", "<localleader>de", function()

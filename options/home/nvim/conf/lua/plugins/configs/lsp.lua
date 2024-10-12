@@ -20,7 +20,8 @@ local on_attach = function(_, bufnr)
 	end
 end
 
-local servers = { "nil_ls", "clangd", "cssls", "html", "pyright" }
+local servers = { "nil_ls", "clangd", "cssls", "html" }
+require'lspconfig'.jedi_language_server.setup{}
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
