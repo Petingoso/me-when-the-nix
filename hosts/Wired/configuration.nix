@@ -35,7 +35,7 @@ in {
     ../../modules/extra/opensnitch.nix
     ../../modules/extra/opentabletdriver.nix
     ../../modules/extra/scripts
-    ../../modules/extra/libvirt.nix
+    # ../../modules/extra/libvirt.nix
   ];
   system.stateVersion = "23.11";
 
@@ -141,6 +141,7 @@ in {
     gamescope
     r2modman
     pcloudFixes
+    fluidsynth
   ];
   # might be needed for open tablet driver to work?
   services.udev.extraRules = ''

@@ -26,7 +26,6 @@
     #virtio-win
     #win-spice
   ];
-  programs.virt-manager.enable = true;
 
   home-manager.users.${config.mystuff.username} = {
     dconf.settings = {
