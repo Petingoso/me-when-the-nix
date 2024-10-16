@@ -3,7 +3,12 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+let
+  firefox = pkgs.firefox-esr-128-unwrapped.overrideAttrs (oldAttrs: {
+    version = "128.3.1esr";
+  });
+in {
   options.mystuff = {
     firefox-config.enable = lib.mkEnableOption "firefox-config";
   };
@@ -15,7 +20,7 @@
       programs.firefox = {
         enable = true;
 
-        package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+        package = pkgs.wrapFirefox firefox {
           extraPolicies = {
             CaptivePortal = false;
             DisableFirefoxStudies = true;
@@ -131,18 +136,18 @@
           extraConfig = lib.strings.concatStrings [
             "${builtins.readFile (fetchGit {
                 url = "https://github.com/arkenfox/user.js";
-                rev = "f906f7f3b41fe3f6aaa744980431f4fdcd086379"; #126.1
+                rev = "f906f7f3b41fe3f6aaa744980431f4fdcd086379"; #128.0
               }
               + "/user.js")}\n"
 
             ''
-              user_pref("browser.search.suggest.enabled",true);
-              user_pref("privacy.cpd.history" , false);
-            user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false);
-              user_pref("privacy.clearOnShutdown.history" , false);
-              user_pref("browser.privatebrowsing.autostart" , false);
-              user_pref("places.history.enabled" , true);
-              user_pref("keyword.enabled" , true);
+                user_pref("browser.search.suggest.enabled",true);
+                user_pref("privacy.cpd.history" , false);
+              user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false);
+                user_pref("privacy.clearOnShutdown.history" , false);
+                user_pref("browser.privatebrowsing.autostart" , false);
+                user_pref("places.history.enabled" , true);
+                user_pref("keyword.enabled" , true);
             ''
           ];
           userChrome = ''
