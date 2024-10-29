@@ -20,7 +20,7 @@ local on_attach = function(_, bufnr)
 	end
 end
 
-local servers = { "nil_ls", "clangd", "cssls", "html" }
+local servers = { "nil_ls", "clangd", "cssls", "html","phpactor" }
 require'lspconfig'.jedi_language_server.setup{}
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
