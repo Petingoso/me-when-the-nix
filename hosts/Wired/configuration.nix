@@ -82,11 +82,23 @@ in {
     enable = true;
     brightnessKeys.enable = true;
   };
+
   services.gvfs.enable = true;
   services.udisks2.enable = true;
-  # Use the systemd-boot EFI boot loader.
+
+  services.openafsClient.enable = true;
+  services.openafsClient.cellName = "ist.utl.pt";
+  security.krb5.enable = true;
+  security.krb5.settings.libdefaults.default_realm = "IST.UTL.PT";
 
   programs.kdeconnect.enable = true;
+  virtualisation.docker.enable = true;
+  users.extraGroups.docker.members = ["${config.mystuff.username}"];
+  virtualisation.docker.storageDriver = "btrfs";
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     baobab
@@ -108,6 +120,7 @@ in {
     wdisplays
     # mcomix
   ];
+
   users.users.${config.mystuff.username}.packages = with pkgs; [
     bitwarden
     calibre
